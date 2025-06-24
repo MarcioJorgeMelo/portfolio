@@ -1,7 +1,7 @@
 import { ArrowRight, ChevronDown, FileDown } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import aboutImage from "../../public/aboutImg.png";
+import apresentationImage from "../../public/apresentationImg.jpg";
 import linkedinIcon from "../../public/LinkedIn.png";
 import githubIcon from "../../public/GitHub.png";
 import whatsappIcon from "../../public/WhatsApp.png";
@@ -11,10 +11,10 @@ import { Button } from "@/components/ui/button";
 
 const Presentation = () => {
   return (
-    <section id="#presentation" className="pb-12">
+    <section id="#presentation" className="pb-10">
       <aside className="relative h-[450px]">
         <Image
-          src={aboutImage}
+          src={apresentationImage}
           alt="Foto pessoal do Márcio Jorge"
           quality={100}
           priority
@@ -30,7 +30,7 @@ const Presentation = () => {
             <h1 className="text-white text-[34px] font-bold mb-3">
               Márcio Jorge, Desenvolvedor Frontend
             </h1>
-            <p className="text-[#C6C6C6] text-base font-medium">
+            <p className="text-[#C6C6C6] leading-8 font-medium">
               Desenvolvedor Frontend com foco em UI/UX, especialista em
               desenvolver interfaces modernas, intuitivas e de grande impacto.
               Uno criatividade e domínio técnico para transformar ideias em
@@ -50,7 +50,7 @@ const Presentation = () => {
           <div className="w-full flex flex-col gap-[18px]">
             <h3 className="text-white text-base font-bold">SOBRE MIM</h3>
 
-            <p className="text-[#C6C6C6] text-base font-medium">
+            <p className="text-[#C6C6C6] leading-8 font-medium">
               Atuação no time de tecnologia da Livsaúde, desenvolvendo sites e
               sistemas internos com foco em performance e usabilidade.
               Experiência com{" "}
@@ -71,7 +71,7 @@ const Presentation = () => {
           <div className="w-full flex flex-col gap-[18px]">
             <h3 className="text-white text-base font-bold">MEUS PROJETOS</h3>
 
-            <p className="text-[#C6C6C6] text-base font-medium">
+            <p className="text-[#C6C6C6] leading-8 font-medium">
               Atuação no time de tecnologia da Livsaúde, desenvolvendo sites e
               sistemas internos com foco em performance e usabilidade.
               Experiência com{" "}
