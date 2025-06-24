@@ -19,7 +19,7 @@ const NavbarMobile = () => {
       </a>
 
       <a
-        href="#experiencia"
+        href="#experience"
         className="text-white flex flex-1 flex-col items-center gap-1.5"
       >
         <BriefcaseBusiness size={24} />
@@ -28,7 +28,7 @@ const NavbarMobile = () => {
       </a>
 
       <a
-        href="#projetos"
+        href="#projects"
         className="text-white flex flex-1 flex-col items-center gap-1.5"
       >
         <SquareCode size={24} />
@@ -37,7 +37,7 @@ const NavbarMobile = () => {
       </a>
 
       <a
-        href="#sobre"
+        href="#about"
         className="text-white flex flex-1 flex-col items-center gap-1.5"
       >
         <Info size={24} />
@@ -46,7 +46,7 @@ const NavbarMobile = () => {
       </a>
 
       <a
-        href="#contato"
+        href="#contact"
         className="text-white flex flex-1 flex-col items-center gap-1.5"
       >
         <CodeXml size={24} strokeWidth={2.5} />
