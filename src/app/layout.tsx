@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import NavbarMobile from "@/components/navbarMobile";
+import { Toaster } from "react-hot-toast";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -18,11 +20,29 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <body
         className={`${spaceGrotesk.className} antialiased bg-dark-background`}
       >
+        <Toaster
+          position="top-right"
+          toastOptions={{
+            success: {
+              style: {
+                background: "var(--color-light-boxes)",
+                color: "var(--color-text-secondary)",
+              },
+            },
+            error: {
+              style: {
+                background: "red",
+                color: "#FFF",
+              },
+            },
+          }}
+        />
         {children}
+        <NavbarMobile />
       </body>
     </html>
   );

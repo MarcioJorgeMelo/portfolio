@@ -6,6 +6,11 @@
 @theme inline {
   --color-background: var(--background);
   --color-dark-background: #1b1f24;
+  --color-light-background: #22282f;
+  --color-light-boxes: #2b313b;
+  --color-primary-blue: #0760e2;
+  --color-secondary-blue: #1b98fe;
+  --color-text-secondary: #c6c6c6;
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -42,6 +47,8 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --text-xss: 18px;
+  --text-xgg: 36px;
 }
 
 :root {

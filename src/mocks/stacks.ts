@@ -16,25 +16,29 @@ import postgresIcon from "../../public/PostgreSQL.png";
 import mongoIcon from "../../public/MongoDb.png";
 import firebaseIcon from "../../public/Firebase.png";
 import clickupIcon from "../../public/ClickUp.png";
+import dockerIcon from "../../public/Docker.png";
+import gitIcon from "../../public/Git.png";
 import { StaticImageData } from "next/image";
 
 export const stacks: StaticImageData[] = [
-  figmaIcon,
-  javascriptIcon,
-  typescriptIcon,
-  htmlIcon,
-  cssIcon,
-  sassIcon,
   reactIcon,
   NextIcon,
-  tailwindIcon,
-  bitbucketIcon,
-  githubIcon,
+  typescriptIcon,
   jestIcon,
+  figmaIcon,
+  tailwindIcon,
+  sassIcon,
+  cssIcon,
+  htmlIcon,
+  javascriptIcon,
+  dockerIcon,
   nodeIcon,
   expressIcon,
   postgresIcon,
   mongoIcon,
   firebaseIcon,
+  githubIcon,
+  gitIcon,
+  bitbucketIcon,
   clickupIcon,
 ];
