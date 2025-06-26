@@ -41,8 +41,14 @@ export default function RootLayout({
             },
           }}
         />
-        {children}
-        <NavbarMobile />
+
+        <main className="w-full h-screen flex flex-col items-center">
+          <div className="w-full h-full flex flex-col items-center overflow-y-auto" style={{ scrollbarWidth: "none", msOverflowStyle: "none", scrollBehavior: "smooth" }}>
+            {children}
+          </div>
+
+          <NavbarMobile />
+        </main>
       </body>
     </html>
   );
