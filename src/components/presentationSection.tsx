@@ -1,6 +1,6 @@
 import { CodeXml, LoaderCircle } from "lucide-react";
 import Image from "next/image";
-import apresentationRoundedImage from "../../public/@rafasdoliveira-43.png";
+import apresentationRoundedImage from "../../public/apresentationImgMobile.png";
 import linkedinIcon from "../../public/LinkedIn.png";
 import githubIcon from "../../public/GitHub.png";
 import whatsappIcon from "../../public/WhatsApp.png";
@@ -13,7 +13,7 @@ import CurriculumDownloadButton from "./curriculumDownload";
 const Presentation = () => {
   return (
     <section
-      id="#presentation"
+      id="apresentation"
       className="w-full py-10 px-6 flex flex-col gap-3"
     >
       <aside className="w-full flex justify-center relative items-center gap-7">

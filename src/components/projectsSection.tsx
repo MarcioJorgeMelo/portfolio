@@ -9,7 +9,7 @@ import { Button } from "./ui/button";
 
 const Projects = () => {
   return (
-    <section id="#projects" className="w-full py-10 px-6 flex flex-col gap-10">
+    <section id="projects" className="w-full py-10 px-6 flex flex-col gap-10">
       <aside className="flex flex-col gap-4">
         <div className="w-full max-w-[96px] bg-white h-2" />
         <h1 className="text-white text-xgg font-bold">Projetos</h1>
