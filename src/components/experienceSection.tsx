@@ -1,7 +1,7 @@
 const Experience = () => {
   return (
     <section
-      id="#experience"
+      id="experience"
       className="py-10 px-6 flex flex-col w-full gap-10 bg-light-background"
     >
       <aside className="flex flex-col gap-4">

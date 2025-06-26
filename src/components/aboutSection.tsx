@@ -1,11 +1,11 @@
 import Image from "next/image";
 import aboutImg from "../../public/aboutImgMobile.png";
-import { stacks } from "@/mocks/stacks";
+import { stacks } from "@/shared/mocks/stacks";
 
 const About = () => {
   return (
     <section
-      id="#about"
+      id="about"
       className="py-10 px-6 flex flex-col w-full gap-10 bg-light-background"
     >
       <aside className="flex flex-col gap-4">
