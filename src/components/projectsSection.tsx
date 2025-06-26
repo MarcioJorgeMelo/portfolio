@@ -9,28 +9,28 @@ import { Button } from "./ui/button";
 
 const Projects = () => {
   return (
-    <section id="#projects" className="py-10 px-6 flex flex-col gap-10">
-      <aside className="flex flex-col">
-        <div className="w-full max-w-[96px] bg-white h-2 mb-6" />
-        <h1 className="text-white text-[36px] font-bold">Projetos</h1>
+    <section id="#projects" className="w-full py-10 px-6 flex flex-col gap-10">
+      <aside className="flex flex-col gap-4">
+        <div className="w-full max-w-[96px] bg-white h-2" />
+        <h1 className="text-white text-xgg font-bold">Projetos</h1>
       </aside>
 
       <aside className="w-full flex flex-col gap-6">
         <article className="w-full flex justify-between items-center">
-          <aside className="px-3 pb-1.5 border-b-[3px] border-[#0760E2]">
-            <h2 className="font-bold text-[18px] text-white">Web</h2>
+          <aside className="px-3 pb-1.5 border-b-[3px] border-primary-blue">
+            <h2 className="font-bold text-xss text-white">Web</h2>
           </aside>
 
           <aside className="px-3 pb-1.5">
-            <h2 className="font-bold text-[18px] text-white">Mobile</h2>
+            <h2 className="font-bold text-xss text-white">Mobile</h2>
           </aside>
 
           <aside className="px-3 pb-1.5">
-            <h2 className="font-bold text-[18px] text-white">Design</h2>
+            <h2 className="font-bold text-xss text-white">Design</h2>
           </aside>
 
           <aside className="px-3 pb-1.5">
-            <h2 className="font-bold text-[18px] text-white">Desktop</h2>
+            <h2 className="font-bold text-xss text-white">Desktop</h2>
           </aside>
         </article>
 
@@ -48,7 +48,7 @@ const Projects = () => {
 
               <div className="flex flex-col gap-3 p-3">
                 <div className="flex flex-col gap-3">
-                  <h3 className="text-[18px] font-bold text-white">
+                  <h3 className="text-xss font-bold text-white">
                     OdontoPRO – Plataforma SaaS para clínicas de saúde
                   </h3>
 
@@ -72,7 +72,7 @@ const Projects = () => {
                 </div>
 
                 <div className="flex flex-col gap-4">
-                  <p className="leading-8 font-medium text-[#C6C6C6] line-clamp-3">
+                  <p className="leading-8 font-medium text-text-secondary line-clamp-3">
                     Solução web desenvolvida para clínicas criarem seu perfil
                     completo, com informações, fotos, serviços oferecidos,
                     horários de funci...
@@ -105,7 +105,7 @@ const Projects = () => {
             </CardContent>
           </Card>
 
-          <Button className="w-fit self-center bg-[#0760E2] px-6 py-3 rounded-[8px] flex items-center justify-center text-white font-bold text-[20px]">
+          <Button variant="seeMore" size="seeMore">
             Ver mais...
           </Button>
         </article>
