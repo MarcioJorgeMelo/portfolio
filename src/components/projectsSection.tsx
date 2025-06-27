@@ -78,7 +78,7 @@ const Projects = () => {
                     horários de funci...
                   </p>
 
-                  <nav className="flex items-center gap-3">
+                  <nav className="flex items-center gap-4">
                     <Link
                       href="#"
                       className="text-white font-bold text-sm flex items-center gap-2"
