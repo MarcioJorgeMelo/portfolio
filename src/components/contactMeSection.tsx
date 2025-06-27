@@ -6,14 +6,15 @@ import Link from "next/link";
 import Image from "next/image";
 import CurriculumDownloadButton from "./curriculumDownload";
 import { CurriculumDownloadButtonEnum } from "@/@types/curriculumDownloadButtonEnum";
-import { Form, FormControl, FormField, FormItem, FormLabel } from "./ui/form";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "./ui/form";
 import { Card, CardContent } from "./ui/card";
-import { useContactMeForm } from "./contactMeForm";
+import { ContactMeFormData, useContactMeForm } from "./contactMeForm";
 import { Input } from "./ui/input";
 import { Manrope } from "next/font/google";
 import { Textarea } from "./ui/textarea";
 import { ArrowRight } from "lucide-react";
 import { Button } from "./ui/button";
+import clsx from "clsx";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -22,6 +23,10 @@ const manrope = Manrope({
 
 const ContactMe = () => {
   const form = useContactMeForm();
+
+  function onSubmit(values: ContactMeFormData) {
+    console.log(values);
+  }
 
   return (
     <section id="contact" className="py-10 px-6 flex flex-col w-full gap-10">
@@ -78,30 +83,37 @@ const ContactMe = () => {
         </div>
 
         <Form {...form}>
-          <form>
+          <form onSubmit={form.handleSubmit(onSubmit)}>
             <Card className="p-0 w-full px-6 py-10 rounded-[8px] bg-light-boxes border-0">
-              <CardContent className="p-0 flex flex-col gap-9">
-                <FormField
-                  control={form.control}
-                  name="name"
-                  render={({ field }) => (
-                    <FormItem className="gap-2.5">
-                      <FormLabel>
-                        <span className="text-xss text-white">
-                          Informe seu nome
-                        </span>
-                      </FormLabel>
-
-                      <FormControl>
-                        <Input
-                          placeholder="Digite seu nome..."
-                          className={`${manrope.className} border-[#445166] px-3 py-6 text-[#93A2B7] placeholder:text-[#93A2B7]`}
-                          {...field}
-                        />
-                      </FormControl>
-                    </FormItem>
-                  )}
-                />
+              <CardContent className="p-0 flex flex-col gap-8">
+                <div className="gap-2.5">
+                  <FormField
+                    control={form.control}
+                    name="name"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>
+                          <span className="text-xss text-white">
+                            Informe seu nome
+                          </span>
+                        </FormLabel>
+                        <FormControl>
+                          <Input
+                            placeholder="Digite seu nome..."
+                            className={clsx(
+                              `${manrope.className} px-3 py-6 rounded-[10px] text-[#93A2B7] placeholder:text-[#93A2B7]`,
+                              "focus-visible:border-white focus-visible:ring-white/70 focus-visible:ring-[1px]",
+                              form.formState.errors.name
+                                ? "border-[#C42222] focus-visible:ring-[#C42222]"
+                                : "border-[#445166]"
+                            )}                           {...field}
+                          />
+                        </FormControl>
+                        <FormMessage className="text-[#C42222]" />
+                      </FormItem>
+                    )}
+                  />
+                </div>
 
                 <FormField
                   control={form.control}
@@ -117,10 +129,18 @@ const ContactMe = () => {
                       <FormControl>
                         <Input
                           placeholder="Digite seu email..."
-                          className={`${manrope.className} border-[#445166] px-3 py-6 text-[#93A2B7] placeholder:text-[#93A2B7]`}
-                          {...field}
+                          type="email"
+                          className={clsx(
+                            `${manrope.className} px-3 py-6 rounded-[10px] text-[#93A2B7] placeholder:text-[#93A2B7]`,
+                            "focus-visible:border-white focus-visible:ring-white/70 focus-visible:ring-[1px]",
+                            form.formState.errors.name
+                              ? "border-[#C42222] focus-visible:ring-[#C42222]"
+                              : "border-[#445166]"
+                          )}                          {...field}
                         />
                       </FormControl>
+
+                      <FormMessage className="text-[#C42222]" />
                     </FormItem>
                   )}
                 />
@@ -139,10 +159,18 @@ const ContactMe = () => {
                       <FormControl>
                         <Input
                           placeholder="Digite o assunto..."
-                          className={`${manrope.className} border-[#445166] px-3 py-6 text-[#93A2B7] placeholder:text-[#93A2B7]`}
+                          className={clsx(
+                            `${manrope.className} px-3 py-6 rounded-[10px] text-[#93A2B7] placeholder:text-[#93A2B7]`,
+                            "focus-visible:border-white focus-visible:ring-white/70 focus-visible:ring-[1px]",
+                            form.formState.errors.name
+                              ? "border-[#C42222] focus-visible:ring-[#C42222]"
+                              : "border-[#445166]"
+                          )}
                           {...field}
                         />
                       </FormControl>
+
+                      <FormMessage className="text-[#C42222]" />
                     </FormItem>
                   )}
                 />
@@ -161,10 +189,17 @@ const ContactMe = () => {
                       <FormControl>
                         <Textarea
                           placeholder="Digite a mensagem..."
-                          className={`${manrope.className} border-[#445166] h-[140px] px-3 py-3 text-[#93A2B7] placeholder:text-[#93A2B7] resize-none`}
-                          {...field}
+                          className={clsx(
+                            `${manrope.className} border-[#445166] h-[140px] px-3 py-3 text-[#93A2B7] placeholder:text-[#93A2B7] resize-none`,
+                            "focus-visible:border-white focus-visible:ring-white/70 focus-visible:ring-[1px]",
+                            form.formState.errors.name
+                              ? "border-[#C42222] focus-visible:ring-[#C42222]"
+                              : "border-[#445166]"
+                          )}                          {...field}
                         />
                       </FormControl>
+
+                      <FormMessage className="text-[#C42222]" />
                     </FormItem>
                   )}
                 />
