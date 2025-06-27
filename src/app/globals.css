@@ -49,6 +49,8 @@
   --radius-xl: calc(var(--radius) + 4px);
   --text-xss: 18px;
   --text-xgg: 36px;
+  --breakpoint-ssm: 390px;
+  --breakpoint-msm: 412px;
   --breakpoint-xsm: 430px;
 }
 
@@ -133,7 +135,7 @@
 @layer utilities {
   input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px var(--color-light-boxes) inset;
-    -webkit-text-fill-color: #93A2B7;
+    -webkit-text-fill-color: #93a2b7;
     transition: background-color 5000s ease-in-out 0s;
   }
 }
