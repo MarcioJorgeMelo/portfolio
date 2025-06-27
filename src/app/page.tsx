@@ -6,7 +6,7 @@ import ProjectsSection from "@/components/projectsSection";
 
 export default function Portfolio() {
   return (
-    <main>
+    <>
       <PresentationSection />
 
       <ExperienceSection />
@@ -16,6 +16,6 @@ export default function Portfolio() {
       <AboutSection />
 
       <ContactMeSection />
-    </main>
+    </>
   );
 }
