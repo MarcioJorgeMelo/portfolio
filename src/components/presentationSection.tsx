@@ -1,5 +1,4 @@
 import { CodeXml, LoaderCircle } from "lucide-react";
-import Image from "next/image";
 import apresentationRoundedImage from "../../public/apresentationImgMobile.png";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Link from "next/link";
@@ -15,7 +14,8 @@ const Presentation = () => {
       className="w-full py-10 px-6 flex flex-col gap-3"
     >
       <aside className="w-full flex justify-center relative items-center gap-7">
-        <Avatar className="w-[150px] h-[150px] rounded-full">
+        {/* w-[150px] h-[150px] */}
+        <Avatar className="w-[110px] h-[110px] rounded-full">
           <AvatarImage
             src={apresentationRoundedImage.src}
             alt="Imagem do Márcio Jorge"
@@ -32,15 +32,17 @@ const Presentation = () => {
 
         <CodeXml
           size={36}
-          strokeWidth={3}
+          strokeWidth={2.5}
           color="var(--color-primary-blue)"
-          className="absolute -bottom-2 left-26 z-10"
+          // -bottom-2 left-26
+          className="absolute bottom-0 left-18 z-10"
         />
 
         <div className="w-full flex flex-col items-start gap-2.5">
           <div className="w-full max-w-[96px] bg-gradient-to-r from-primary-blue to-secondary-blue h-[5px]" />
 
-          <h1 className="text-white text-[28px] font-bold">
+          {/* text-[28px] */}
+          <h1 className="text-white text-[26px] font-bold">
             Márcio Jorge,
             <br />
             Desenvolvedor Frontend
@@ -57,7 +59,7 @@ const Presentation = () => {
         </p>
       </aside>
 
-      <aside className="w-full flex items-center justify-center gap-6 pt-6">
+      <aside className="w-full flex gap-6 pt-6">
         <div className="w-full flex flex-col gap-6">
           <h3 className="text-white text-xss font-bold">ENTRE EM CONTATO</h3>
 
@@ -72,12 +74,7 @@ const Presentation = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Image
-                    src={link.icon}
-                    alt={link.alt}
-                    height={28}
-                    width={28}
-                  />
+                  <link.icon className="w-6 h-6 text-white" />
                 </Link>
               )
             )}
