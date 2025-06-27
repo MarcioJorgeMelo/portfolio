@@ -43,7 +43,14 @@ export default function RootLayout({
         />
 
         <main className="w-full h-screen flex flex-col items-center">
-          <div className="w-full h-full flex flex-col items-center overflow-y-auto" style={{ scrollbarWidth: "none", msOverflowStyle: "none", scrollBehavior: "smooth" }}>
+          <div
+            className="w-full h-full flex flex-col items-center overflow-y-auto"
+            style={{
+              scrollbarWidth: "none",
+              msOverflowStyle: "none",
+              scrollBehavior: "smooth",
+            }}
+          >
             {children}
           </div>
 
