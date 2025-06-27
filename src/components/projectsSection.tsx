@@ -1,11 +1,11 @@
 import CapaExImg from "../../public/capa-ex.png";
-import githubIcon from "../../public/GitHub.png";
 import Image from "next/image";
 import { Card, CardContent } from "./ui/card";
 import { Badge } from "./ui/badge";
 import Link from "next/link";
 import { SquareArrowOutUpRight } from "lucide-react";
 import { Button } from "./ui/button";
+import { FaGithub } from "react-icons/fa";
 
 const Projects = () => {
   return (
@@ -18,19 +18,25 @@ const Projects = () => {
       <aside className="w-full flex flex-col gap-6">
         <article className="w-full flex justify-between items-center">
           <aside className="px-3 pb-1.5 border-b-[3px] border-primary-blue">
-            <h2 className="font-bold text-xss text-white">Web</h2>
+            <h2 className="font-bold text-base ssm:text-lg text-white">Web</h2>
           </aside>
 
           <aside className="px-3 pb-1.5">
-            <h2 className="font-bold text-xss text-white">Mobile</h2>
+            <h2 className="font-bold text-base ssm:text-lg text-white">
+              Mobile
+            </h2>
           </aside>
 
           <aside className="px-3 pb-1.5">
-            <h2 className="font-bold text-xss text-white">Design</h2>
+            <h2 className="font-bold text-base ssm:text-lg text-white">
+              Design
+            </h2>
           </aside>
 
           <aside className="px-3 pb-1.5">
-            <h2 className="font-bold text-xss text-white">Desktop</h2>
+            <h2 className="font-bold text-base ssm:text-lg text-white">
+              Desktop
+            </h2>
           </aside>
         </article>
 
@@ -52,7 +58,13 @@ const Projects = () => {
                     OdontoPRO – Plataforma SaaS para clínicas de saúde
                   </h3>
 
-                  <div className="flex gap-2 items-center">
+                  <div
+                    className="flex gap-2 items-center overflow-x-auto"
+                    style={{
+                      scrollbarWidth: "none",
+                      msOverflowStyle: "none",
+                    }}
+                  >
                     <Badge className="px-2 py-1.5 rounded-3xl bg-[#292F39] text-white font-bold text-sm">
                       NextJS
                     </Badge>
@@ -78,7 +90,7 @@ const Projects = () => {
                     horários de funci...
                   </p>
 
-                  <nav className="flex items-center gap-3">
+                  <nav className="flex items-center gap-4">
                     <Link
                       href="#"
                       className="text-white font-bold text-sm flex items-center gap-2"
@@ -92,12 +104,7 @@ const Projects = () => {
                       className="text-white font-bold text-sm flex items-center gap-2"
                     >
                       Repositório
-                      <Image
-                        src={githubIcon}
-                        alt="Ícone do Github"
-                        width={20}
-                        height={20}
-                      />
+                      <FaGithub width={20} height={20} />
                     </Link>
                   </nav>
                 </div>
