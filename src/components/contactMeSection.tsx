@@ -3,7 +3,6 @@
 import { socialLinks } from "@/shared/mocks/socialLinks";
 import EmailButton from "./emailButton";
 import Link from "next/link";
-import Image from "next/image";
 import CurriculumDownloadButton from "./curriculumDownload";
 import { CurriculumDownloadButtonEnum } from "@/@types/curriculumDownloadButtonEnum";
 import { Form, FormControl, FormField, FormItem, FormLabel } from "./ui/form";
@@ -59,12 +58,7 @@ const ContactMe = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <Image
-                        src={link.icon}
-                        alt={link.alt}
-                        height={28}
-                        width={28}
-                      />
+                      <link.icon className="w-6 h-6 text-white" />
                     </Link>
                   )
                 )}

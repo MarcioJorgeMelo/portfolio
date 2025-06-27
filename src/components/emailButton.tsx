@@ -1,9 +1,8 @@
 "use client";
 
 import { Button } from "./ui/button";
-import Image from "next/image";
-import emailIcon from "../../public/Email.png";
 import toast from "react-hot-toast";
+import { MdEmail } from "react-icons/md";
 
 const EmailButton = () => {
   async function handleCopyEmail() {
@@ -21,7 +20,7 @@ const EmailButton = () => {
 
   return (
     <Button variant="emailButton" size="emailButton" onClick={handleCopyEmail}>
-      <Image src={emailIcon} alt="Ícone do Email" height={28} width={28} />
+      <MdEmail className="size-6 text-white" />
     </Button>
   );
 };
