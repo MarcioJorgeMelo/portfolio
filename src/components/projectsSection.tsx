@@ -18,20 +18,25 @@ const Projects = () => {
       <aside className="w-full flex flex-col gap-6">
         <article className="w-full flex justify-between items-center">
           <aside className="px-3 pb-1.5 border-b-[3px] border-primary-blue">
-            {/* text-xss */}
-            <h2 className="font-bold text-base text-white">Web</h2>
+            <h2 className="font-bold text-base ssm:text-lg text-white">Web</h2>
           </aside>
 
           <aside className="px-3 pb-1.5">
-            <h2 className="font-bold text-base text-white">Mobile</h2>
+            <h2 className="font-bold text-base ssm:text-lg text-white">
+              Mobile
+            </h2>
           </aside>
 
           <aside className="px-3 pb-1.5">
-            <h2 className="font-bold text-base text-white">Design</h2>
+            <h2 className="font-bold text-base ssm:text-lg text-white">
+              Design
+            </h2>
           </aside>
 
           <aside className="px-3 pb-1.5">
-            <h2 className="font-bold text-base text-white">Desktop</h2>
+            <h2 className="font-bold text-base ssm:text-lg text-white">
+              Desktop
+            </h2>
           </aside>
         </article>
 
