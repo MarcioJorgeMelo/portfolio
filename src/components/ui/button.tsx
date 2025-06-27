@@ -23,7 +23,7 @@ const buttonVariants = cva(
         download:
           "bg-primary-blue text-white font-bold text-[14px] flex flex-col items-center justify-center gap-1.5",
         seeMore:
-          "self-center bg-primary-blue flex items-center justify-center text-white font-bold text-[18px]",
+          "self-center bg-primary-blue flex items-center justify-center text-white font-bold text-[16px] xsm:text-[18px]",
         emailButton: "bg-transparent",
         underline:
           "w-fit text-base text-white flex items-center gap-3 pb-1.5 border-b-[1.5px] border-[#445166] rounded-none",
@@ -33,7 +33,7 @@ const buttonVariants = cva(
         sm: "h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
         lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
         icon: "size-9",
-        download: "w-full h-auto px-[16px] xsm:px-[28px] py-2",
+        download: "w-full h-auto px-[14px] ssm:px-[28px] py-2",
         seeMore: "px-6 py-3",
         emailButton: "w-fit",
         underline: "w-fit px-0 pb-1.5",
