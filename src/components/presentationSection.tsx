@@ -1,19 +1,17 @@
 import { CodeXml, LoaderCircle } from "lucide-react";
 import Image from "next/image";
 import apresentationRoundedImage from "../../public/apresentationImgMobile.png";
-import linkedinIcon from "../../public/LinkedIn.png";
-import githubIcon from "../../public/GitHub.png";
-import whatsappIcon from "../../public/WhatsApp.png";
-import instagramIcon from "../../public/Instagram.png";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Link from "next/link";
 import EmailButton from "./emailButton";
 import CurriculumDownloadButton from "./curriculumDownload";
+import { socialLinks } from "@/shared/mocks/socialLinks";
+import { CurriculumDownloadButtonEnum } from "@/@types/curriculumDownloadButtonEnum";
 
 const Presentation = () => {
   return (
     <section
-      id="apresentation"
+      id="presentation"
       className="w-full py-10 px-6 flex flex-col gap-3"
     >
       <aside className="w-full flex justify-center relative items-center gap-7">
@@ -64,63 +62,29 @@ const Presentation = () => {
           <h3 className="text-white text-xss font-bold">ENTRE EM CONTATO</h3>
 
           <div className="flex gap-5 items-center">
-            <Link
-              href="https://www.linkedin.com/in/m%C3%A1rcio-jorge-417aa127a/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Image
-                src={linkedinIcon}
-                alt="Ícone do LinkedIn"
-                height={28}
-                width={28}
-              />
-            </Link>
-
-            <EmailButton />
-
-            <Link
-              href="https://wa.me/5585985603089?text=Olá, vim pelo seu porfólio!"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Image
-                src={whatsappIcon}
-                alt="Ícone do Whatsapp"
-                height={28}
-                width={28}
-              />
-            </Link>
-
-            <Link
-              href="https://www.instagram.com/jorge.developer/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Image
-                src={instagramIcon}
-                alt="Ícone do Instagram"
-                height={28}
-                width={28}
-              />
-            </Link>
-
-            <Link
-              href="https://github.com/MarcioJorgeMelo"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Image
-                src={githubIcon}
-                alt="Ícone do Github"
-                height={28}
-                width={28}
-              />
-            </Link>
+            {socialLinks.map((link) =>
+              link.id === "email" ? (
+                <EmailButton key="email" />
+              ) : (
+                <Link
+                  key={link.id}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image
+                    src={link.icon}
+                    alt={link.alt}
+                    height={28}
+                    width={28}
+                  />
+                </Link>
+              )
+            )}
           </div>
         </div>
 
-        <CurriculumDownloadButton />
+        <CurriculumDownloadButton type={CurriculumDownloadButtonEnum.COL} />
       </aside>
     </section>
   );
