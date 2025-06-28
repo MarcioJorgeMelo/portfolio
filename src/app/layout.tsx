@@ -3,6 +3,7 @@ import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import NavbarMobile from "@/components/navbarMobile";
 import { Toaster } from "react-hot-toast";
+import Header from "@/components/header";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -42,19 +43,25 @@ export default function RootLayout({
           }}
         />
 
-        <main className="w-full h-screen flex flex-col items-center">
+        <main className="w-full h-screen flex flex-col sm:mt-[120px]">
+          <div className="hidden sm:block">
+            <Header />
+          </div>
+
           <div
-            className="w-full h-full flex flex-col overflow-y-auto"
-            style={{
-              scrollbarWidth: "none",
-              msOverflowStyle: "none",
-              scrollBehavior: "smooth",
-            }}
+            className="
+    flex-1
+    overflow-y-auto sm:overflow-visible
+    scroll-smooth sm:scroll-auto
+    [scrollbar-width:none] [-ms-overflow-style:none]
+  "
           >
             {children}
           </div>
 
-          <NavbarMobile />
+          <div className="block sm:hidden">
+            <NavbarMobile />
+          </div>
         </main>
       </body>
     </html>
