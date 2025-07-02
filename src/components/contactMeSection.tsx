@@ -1,7 +1,6 @@
 "use client";
 
 import { socialLinks } from "@/shared/mocks/socialLinks";
-import EmailButton from "./emailButton";
 import Link from "next/link";
 import CurriculumDownloadButton from "./curriculumDownload";
 import { CurriculumDownloadButtonEnum } from "@/@types/curriculumDownloadButtonEnum";
@@ -14,6 +13,7 @@ import { Textarea } from "./ui/textarea";
 import { ArrowRight } from "lucide-react";
 import { Button } from "./ui/button";
 import clsx from "clsx";
+import { useState } from "react";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -21,6 +21,7 @@ const manrope = Manrope({
 });
 
 const ContactMe = () => {
+  const [hoveredId, setHoveredId] = useState<string | null>(null);
   const form = useContactMeForm();
 
   function onSubmit(values: ContactMeFormData) {
@@ -53,19 +54,22 @@ const ContactMe = () => {
 
             <div className="flex flex-col gap-6">
               <div className="flex gap-5 items-center">
-                {socialLinks.map((link) =>
-                  link.id === "email" ? (
-                    <EmailButton key="email" />
-                  ) : (
-                    <Link
-                      key={link.id}
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <link.icon className="w-6 h-6 text-white" />
-                    </Link>
-                  )
+                {socialLinks.map((link) => (
+                  <Link
+                    key={link.id}
+                    href={link.href}
+                    target={link.id === "email" ? '_self' : '_blank'}
+                    rel="noopener noreferrer"
+                    onMouseEnter={() => setHoveredId(link.id)}
+                    onMouseLeave={() => setHoveredId(null)}
+                    className={`transition-opacity duration-500 ${hoveredId && hoveredId !== link.id
+                      ? "opacity-30"
+                      : "opacity-100"
+                      }`}
+                  >
+                    <link.icon className="w-6 h-6 text-white" />
+                  </Link>
+                )
                 )}
               </div>
 
@@ -76,136 +80,138 @@ const ContactMe = () => {
           </div>
         </div>
 
-        <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)}>
-            <Card className="p-0 w-full px-6 py-10 rounded-[8px] bg-light-boxes border-0">
-              <CardContent className="p-0 flex flex-col gap-8">
-                <div className="gap-2.5">
+        <section id="emailTo">
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)}>
+              <Card className="p-0 w-full px-6 py-10 rounded-[8px] bg-light-boxes border-0">
+                <CardContent className="p-0 flex flex-col gap-8">
+                  <div className="gap-2.5">
+                    <FormField
+                      control={form.control}
+                      name="name"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>
+                            <span className="text-xss text-white">
+                              Informe seu nome
+                            </span>
+                          </FormLabel>
+                          <FormControl>
+                            <Input
+                              placeholder="Digite seu nome..."
+                              className={clsx(
+                                `${manrope.className} px-3 py-6 rounded-[10px] text-[#93A2B7] placeholder:text-[#93A2B7]`,
+                                "focus-visible:border-white focus-visible:ring-white/70 focus-visible:ring-[1px]",
+                                form.formState.errors.name
+                                  ? "border-[#C42222] focus-visible:ring-[#C42222]"
+                                  : "border-[#445166]"
+                              )}                           {...field}
+                            />
+                          </FormControl>
+                          <FormMessage className="text-[#C42222]" />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
+
                   <FormField
                     control={form.control}
-                    name="name"
+                    name="email"
                     render={({ field }) => (
-                      <FormItem>
+                      <FormItem className="gap-2.5">
                         <FormLabel>
                           <span className="text-xss text-white">
-                            Informe seu nome
+                            Seu endereço de e-mail
                           </span>
                         </FormLabel>
+
                         <FormControl>
                           <Input
-                            placeholder="Digite seu nome..."
+                            placeholder="Digite seu email..."
+                            type="email"
                             className={clsx(
                               `${manrope.className} px-3 py-6 rounded-[10px] text-[#93A2B7] placeholder:text-[#93A2B7]`,
                               "focus-visible:border-white focus-visible:ring-white/70 focus-visible:ring-[1px]",
                               form.formState.errors.name
                                 ? "border-[#C42222] focus-visible:ring-[#C42222]"
                                 : "border-[#445166]"
-                            )}                           {...field}
+                            )}                          {...field}
                           />
                         </FormControl>
+
                         <FormMessage className="text-[#C42222]" />
                       </FormItem>
                     )}
                   />
-                </div>
 
-                <FormField
-                  control={form.control}
-                  name="email"
-                  render={({ field }) => (
-                    <FormItem className="gap-2.5">
-                      <FormLabel>
-                        <span className="text-xss text-white">
-                          Seu endereço de e-mail
-                        </span>
-                      </FormLabel>
+                  <FormField
+                    control={form.control}
+                    name="subject"
+                    render={({ field }) => (
+                      <FormItem className="gap-2.5">
+                        <FormLabel>
+                          <span className="text-xss text-white">
+                            O assunto da sua mensagem
+                          </span>
+                        </FormLabel>
 
-                      <FormControl>
-                        <Input
-                          placeholder="Digite seu email..."
-                          type="email"
-                          className={clsx(
-                            `${manrope.className} px-3 py-6 rounded-[10px] text-[#93A2B7] placeholder:text-[#93A2B7]`,
-                            "focus-visible:border-white focus-visible:ring-white/70 focus-visible:ring-[1px]",
-                            form.formState.errors.name
-                              ? "border-[#C42222] focus-visible:ring-[#C42222]"
-                              : "border-[#445166]"
-                          )}                          {...field}
-                        />
-                      </FormControl>
+                        <FormControl>
+                          <Input
+                            placeholder="Digite o assunto..."
+                            className={clsx(
+                              `${manrope.className} px-3 py-6 rounded-[10px] text-[#93A2B7] placeholder:text-[#93A2B7]`,
+                              "focus-visible:border-white focus-visible:ring-white/70 focus-visible:ring-[1px]",
+                              form.formState.errors.name
+                                ? "border-[#C42222] focus-visible:ring-[#C42222]"
+                                : "border-[#445166]"
+                            )}
+                            {...field}
+                          />
+                        </FormControl>
 
-                      <FormMessage className="text-[#C42222]" />
-                    </FormItem>
-                  )}
-                />
+                        <FormMessage className="text-[#C42222]" />
+                      </FormItem>
+                    )}
+                  />
 
-                <FormField
-                  control={form.control}
-                  name="subject"
-                  render={({ field }) => (
-                    <FormItem className="gap-2.5">
-                      <FormLabel>
-                        <span className="text-xss text-white">
-                          O assunto da sua mensagem
-                        </span>
-                      </FormLabel>
+                  <FormField
+                    control={form.control}
+                    name="message"
+                    render={({ field }) => (
+                      <FormItem className="gap-2.5">
+                        <FormLabel>
+                          <span className="text-xss text-white">
+                            Escreva sua mensagem para mim
+                          </span>
+                        </FormLabel>
 
-                      <FormControl>
-                        <Input
-                          placeholder="Digite o assunto..."
-                          className={clsx(
-                            `${manrope.className} px-3 py-6 rounded-[10px] text-[#93A2B7] placeholder:text-[#93A2B7]`,
-                            "focus-visible:border-white focus-visible:ring-white/70 focus-visible:ring-[1px]",
-                            form.formState.errors.name
-                              ? "border-[#C42222] focus-visible:ring-[#C42222]"
-                              : "border-[#445166]"
-                          )}
-                          {...field}
-                        />
-                      </FormControl>
+                        <FormControl>
+                          <Textarea
+                            placeholder="Digite a mensagem..."
+                            className={clsx(
+                              `${manrope.className} border-[#445166] h-[140px] px-3 py-3 text-[#93A2B7] placeholder:text-[#93A2B7] resize-none`,
+                              "focus-visible:border-white focus-visible:ring-white/70 focus-visible:ring-[1px]",
+                              form.formState.errors.name
+                                ? "border-[#C42222] focus-visible:ring-[#C42222]"
+                                : "border-[#445166]"
+                            )}                          {...field}
+                          />
+                        </FormControl>
 
-                      <FormMessage className="text-[#C42222]" />
-                    </FormItem>
-                  )}
-                />
+                        <FormMessage className="text-[#C42222]" />
+                      </FormItem>
+                    )}
+                  />
 
-                <FormField
-                  control={form.control}
-                  name="message"
-                  render={({ field }) => (
-                    <FormItem className="gap-2.5">
-                      <FormLabel>
-                        <span className="text-xss text-white">
-                          Escreva sua mensagem para mim
-                        </span>
-                      </FormLabel>
-
-                      <FormControl>
-                        <Textarea
-                          placeholder="Digite a mensagem..."
-                          className={clsx(
-                            `${manrope.className} border-[#445166] h-[140px] px-3 py-3 text-[#93A2B7] placeholder:text-[#93A2B7] resize-none`,
-                            "focus-visible:border-white focus-visible:ring-white/70 focus-visible:ring-[1px]",
-                            form.formState.errors.name
-                              ? "border-[#C42222] focus-visible:ring-[#C42222]"
-                              : "border-[#445166]"
-                          )}                          {...field}
-                        />
-                      </FormControl>
-
-                      <FormMessage className="text-[#C42222]" />
-                    </FormItem>
-                  )}
-                />
-
-                <Button type="submit" variant="underline" size="underline">
-                  ENVIAR MENSAGEM
-                  <ArrowRight className="size-5" color="#FFF" />
-                </Button>
-              </CardContent>
-            </Card>
-          </form>
-        </Form>
+                  <Button type="submit" variant="underline" size="underline">
+                    ENVIAR MENSAGEM
+                    <ArrowRight className="size-5" color="#FFF" />
+                  </Button>
+                </CardContent>
+              </Card>
+            </form>
+          </Form>
+        </section>
       </aside>
     </section>
   );
