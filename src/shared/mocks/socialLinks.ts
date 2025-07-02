@@ -12,7 +12,7 @@ export const socialLinks = [
   },
   {
     id: "email",
-    href: "#contact",
+    href: "#emailTo",
     icon: MdEmail,
     alt: "Ícone do E-mail",
   },
