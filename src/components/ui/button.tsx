@@ -27,6 +27,8 @@ const buttonVariants = cva(
         emailButton: "bg-transparent",
         underline:
           "w-fit text-base text-white flex items-center gap-3 pb-1.5 border-b-[1.5px] border-[#445166] rounded-none",
+        translate:
+          "flex items-center justify-center gap-[3px] bg-dark-background border border-[#999999] rounded-[100px] shadow-lg shadow-black/30",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",
@@ -37,6 +39,7 @@ const buttonVariants = cva(
         seeMore: "px-6 py-3",
         emailButton: "w-fit",
         underline: "w-fit px-0 pb-1.5",
+        translate: "w-fit p-2",
       },
     },
     defaultVariants: {
