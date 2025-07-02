@@ -6,6 +6,7 @@ import Link from "next/link";
 import { SquareArrowOutUpRight } from "lucide-react";
 import { Button } from "./ui/button";
 import { FaGithub } from "react-icons/fa";
+import figmaIcon from "../../public/Figma.png";
 
 const Projects = () => {
   return (
@@ -90,30 +91,42 @@ const Projects = () => {
                     horários de funci...
                   </p>
 
-                  <nav className="flex items-center gap-4">
+                  <nav className="w-full flex items-center gap-3 msm:gap-6">
                     <Link
                       href="#"
-                      className="text-white font-bold text-sm flex items-center gap-2"
+                      className="flex items-center justify-center px-4 py-3 rounded-[8px] border-1 border-[#3E3F40]"
                     >
-                      Projeto no ar
-                      <SquareArrowOutUpRight size={18} color="#FFF" />
+                      <FaGithub className="w-5 h-5" color="#FFF" />
                     </Link>
 
                     <Link
                       href="#"
-                      className="text-white font-bold text-sm flex items-center gap-2"
+                      className="flex items-center justify-center px-4 py-3 rounded-[8px] border-1 border-[#3E3F40]"
                     >
-                      Repositório
-                      <FaGithub width={20} height={20} />
+                      <Image
+                        src={figmaIcon}
+                        alt="Ícone de acesso ao protótipo no Figma"
+                        className="w-5 h-5"
+                      />
                     </Link>
+
+                    <Button asChild variant="seeMore" size="seeMore">
+                      <Link
+                        href="#"
+                        className="text-white font-bold flex items-center gap-2"
+                      >
+                        Projeto no ar
+                        <SquareArrowOutUpRight className="size-5" color="#FFF" />
+                      </Link>
+                    </Button>
                   </nav>
                 </div>
               </div>
             </CardContent>
           </Card>
 
-          <Button variant="seeMore" size="seeMore">
-            Ver mais...
+          <Button variant="seeMore" size="seeMore" className="bg-transparent border border-[#999999] font-bold py-2 ssm:py-3">
+            Ver mais
           </Button>
         </article>
       </aside>
