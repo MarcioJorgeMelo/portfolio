@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { ArrowRight, ChevronDown, CodeXml, LoaderCircle } from "lucide-react";
 import apresentationRoundedImage from "../../public/presentationImgMobile.png";
@@ -18,7 +18,7 @@ const Presentation = () => {
   return (
     <section
       id="presentation"
-      className="w-full py-10 px-6 flex flex-col gap-3 sm:max-w-[1536px] sm:p-0 sm:mx-auto sm:flex-row sm:justify-between sm:items-center sm:gap-0"
+      className="relative w-full py-10 px-6 flex flex-col gap-3 sm:max-w-[1536px] sm:p-0 sm:mx-auto sm:flex-row sm:justify-between sm:items-center sm:gap-0"
     >
       <div className="w-full flex flex-col sm:max-w-[600px] sm:gap-20">
         <div>
@@ -62,14 +62,18 @@ const Presentation = () => {
           </aside>
         </div>
 
-        <Button variant="underline" className="hidden sm:flex justify-center items-center w-[120px] h-[120px] bg-primary-blue rounded-full hover:scale-105" asChild>
+        <Button
+          variant="underline"
+          className="hidden sm:flex justify-center items-center w-[120px] h-[120px] bg-primary-blue rounded-full hover:scale-105"
+          asChild
+        >
           <Link href="#experience">
             <ChevronDown className="size-20 stroke-2 text-white animate-bounce" />
           </Link>
         </Button>
       </div>
 
-      <div className="hidden sm:block absolute top-15 left-[50.5%] -translate-x-1/2 w-[765px] h-[1147px] -z-10">
+      <div className="hidden sm:block absolute -top-20 left-[50.6%] -translate-x-1/2 w-[765px] h-[1147px] -z-10">
         <Image
           src={apresentationImage}
           alt="Imagem pessoal do Márcio Jorge"
@@ -107,9 +111,6 @@ const Presentation = () => {
               <ArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
             </span>
           </Link>
-
-
-
         </div>
 
         <div className="hidden sm:block w-full h-[1px] bg-[#2D343F] rounded-full" />
@@ -118,7 +119,10 @@ const Presentation = () => {
           <h3 className="text-xss text-white font-bold">MEUS PROJETOS</h3>
 
           <p className="text-xss leading-8 font-medium text-text-secondary">
-            Apresento alguns dos meus trabalhos mais relevantes, que demonstram minha proficiência e dedicação em construir interfaces de usuário de alta qualidade. Cada projeto reflete minha abordagem em resolver problemas complexos com soluções criativas e eficientes.
+            Apresento alguns dos meus trabalhos mais relevantes, que demonstram
+            minha proficiência e dedicação em construir interfaces de usuário de
+            alta qualidade. Cada projeto reflete minha abordagem em resolver
+            problemas complexos com soluções criativas e eficientes.
           </p>
 
           <Link
@@ -146,19 +150,19 @@ const Presentation = () => {
               <Link
                 key={link.id}
                 href={link.href}
-                target={link.id === "email" ? '_self' : '_blank'}
+                target={link.id === "email" ? "_self" : "_blank"}
                 rel="noopener noreferrer"
                 onMouseEnter={() => setHoveredId(link.id)}
                 onMouseLeave={() => setHoveredId(null)}
-                className={`transition-opacity duration-500 ${hoveredId && hoveredId !== link.id
-                  ? "opacity-30"
-                  : "opacity-100"
-                  }`}
+                className={`transition-opacity duration-500 ${
+                  hoveredId && hoveredId !== link.id
+                    ? "opacity-30"
+                    : "opacity-100"
+                }`}
               >
                 <link.icon className="w-6 h-6 text-white" />
               </Link>
-            )
-            )}
+            ))}
           </div>
 
           <div className="hidden sm:block">

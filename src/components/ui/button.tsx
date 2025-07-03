@@ -28,7 +28,7 @@ const buttonVariants = cva(
         underline:
           "w-fit text-base text-white flex items-center gap-3 pb-1.5 border-b-[1.5px] border-[#445166] rounded-none",
         translate:
-          "flex items-center justify-center gap-[3px] bg-dark-background border border-[#999999] rounded-[100px] shadow-lg shadow-black/30",
+          "inline-flex items-center justify-center gap-[3px] bg-dark-background border border-[#999999] rounded-[100px] shadow-lg shadow-black/30 transition-all duration-300 hover:bg-[#292F39] sm:gap-[6px] sm:shadow-none",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",
@@ -39,7 +39,7 @@ const buttonVariants = cva(
         seeMore: "px-3 ssm:px-6 py-3",
         emailButton: "w-fit",
         underline: "w-fit px-0 pb-1.5",
-        translate: "w-fit p-2",
+        translate: "p-2 sm:p-1.5",
       },
     },
     defaultVariants: {
