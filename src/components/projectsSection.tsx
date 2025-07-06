@@ -7,129 +7,338 @@ import { SquareArrowOutUpRight } from "lucide-react";
 import { Button } from "./ui/button";
 import { FaGithub } from "react-icons/fa";
 import figmaIcon from "../../public/Figma.png";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const Projects = () => {
   return (
-    <section id="projects" className="w-full py-10 px-6 flex flex-col gap-10">
+    <section
+      id="projects"
+      className="w-full max-w-[1536px] mx-auto py-10 px-6 flex flex-col gap-10 sm:py-30 sm:px-0"
+    >
       <aside className="flex flex-col gap-4">
-        <div className="w-full max-w-[96px] bg-white h-2" />
-        <h1 className="text-white text-xgg font-bold">Projetos</h1>
+        <div className="w-full max-w-[96px] bg-white h-2 sm:max-w-[148px]" />
+        <h1 className="text-white text-xgg font-bold sm:text-[52px]">
+          Projetos
+        </h1>
       </aside>
 
-      <aside className="w-full flex flex-col gap-6">
-        <article className="w-full flex justify-between items-center">
-          <aside className="px-3 pb-1.5 border-b-[3px] border-primary-blue">
-            <h2 className="font-bold text-base ssm:text-lg text-white">Web</h2>
-          </aside>
-
-          <aside className="px-3 pb-1.5">
-            <h2 className="font-bold text-base ssm:text-lg text-white">
-              Mobile
-            </h2>
-          </aside>
-
-          <aside className="px-3 pb-1.5">
-            <h2 className="font-bold text-base ssm:text-lg text-white">
-              Design
-            </h2>
-          </aside>
-
-          <aside className="px-3 pb-1.5">
-            <h2 className="font-bold text-base ssm:text-lg text-white">
-              Desktop
-            </h2>
-          </aside>
-        </article>
-
-        <article className="w-full flex flex-col gap-10">
-          <Card className="w-full overflow-hidden p-0 bg-transparent border-[#3E3F40] rounded-[12px]">
-            <CardContent className="p-0">
-              <div className="relative h-[220px]">
-                <Image
-                  src={CapaExImg}
-                  alt="Capa de um projeto"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-
-              <div className="flex flex-col gap-3 p-3">
-                <div className="flex flex-col gap-3">
-                  <h3 className="text-xss font-bold text-white">
-                    OdontoPRO – Plataforma SaaS para clínicas de saúde
-                  </h3>
-
-                  <div
-                    className="flex gap-2 items-center overflow-x-auto"
-                    style={{
-                      scrollbarWidth: "none",
-                      msOverflowStyle: "none",
-                    }}
-                  >
-                    <Badge className="px-2 py-1.5 rounded-3xl bg-[#292F39] text-white font-bold text-sm">
-                      NextJS
-                    </Badge>
-
-                    <Badge className="px-2 py-1.5 rounded-3xl bg-[#292F39] text-white font-bold text-sm">
-                      TailwindCSS
-                    </Badge>
-
-                    <Badge className="px-2 py-1.5 rounded-3xl bg-[#292F39] text-white font-bold text-sm">
-                      Stripe
-                    </Badge>
-
-                    <Badge className="px-2 py-1.5 rounded-3xl bg-[#292F39] text-white font-bold text-sm">
-                      PostgreSQL
-                    </Badge>
+      <Tabs defaultValue="web" className="w-full">
+        <TabsList className="w-full bg-transparent justify-between sm:w-fit sm:justify-normal sm:gap-6">
+          <TabsTrigger
+            value="web"
+            className="font-bold text-base ssm:text-lg text-white"
+          >
+            Web
+          </TabsTrigger>
+          <TabsTrigger
+            value="mobile"
+            className="font-bold text-base ssm:text-lg text-white"
+          >
+            Mobile
+          </TabsTrigger>
+          <TabsTrigger
+            value="design"
+            className="font-bold text-base ssm:text-lg text-white"
+          >
+            Design
+          </TabsTrigger>
+          <TabsTrigger
+            value="desktop"
+            className="font-bold text-base ssm:text-lg text-white"
+          >
+            Desktop
+          </TabsTrigger>
+        </TabsList>
+        <TabsContent value="web">
+          <aside className="w-full flex flex-col gap-10 justify-center">
+            <div className="w-full grid grid-cols-1 gap-10 sm:grid-cols-3 sm:gap-16">
+              <Card className="w-full overflow-hidden p-0 bg-transparent border-[#3E3F40] rounded-[12px]">
+                <CardContent className="p-0">
+                  <div className="relative h-[220px] sm:h-[280px]">
+                    <Image
+                      src={CapaExImg}
+                      alt="Capa de um projeto"
+                      fill
+                      className="object-cover"
+                    />
                   </div>
-                </div>
 
-                <div className="flex flex-col gap-4">
-                  <p className="leading-8 font-medium text-text-secondary line-clamp-3">
-                    Solução web desenvolvida para clínicas criarem seu perfil
-                    completo, com informações, fotos, serviços oferecidos,
-                    horários de funci...
-                  </p>
+                  <div className="flex flex-col gap-4 p-3 sm:gap-6 sm:p-4">
+                    <div className="flex flex-col gap-4">
+                      <h3 className="text-xss font-bold text-white sm:text-2xl">
+                        OdontoPRO – Plataforma SaaS para clínicas de saúde
+                      </h3>
 
-                  <nav className="w-full flex items-center gap-3 msm:gap-6">
-                    <Link
-                      href="#"
-                      className="flex items-center justify-center px-4 py-3 rounded-[8px] border-1 border-[#3E3F40]"
-                    >
-                      <FaGithub className="w-5 h-5" color="#FFF" />
-                    </Link>
-
-                    <Link
-                      href="#"
-                      className="flex items-center justify-center px-4 py-3 rounded-[8px] border-1 border-[#3E3F40]"
-                    >
-                      <Image
-                        src={figmaIcon}
-                        alt="Ícone de acesso ao protótipo no Figma"
-                        className="w-5 h-5"
-                      />
-                    </Link>
-
-                    <Button asChild variant="seeMore" size="seeMore">
-                      <Link
-                        href="#"
-                        className="text-white font-bold flex items-center gap-2"
+                      <div
+                        className="flex gap-2 items-center overflow-x-auto sm:gap-3"
+                        style={{
+                          scrollbarWidth: "none",
+                          msOverflowStyle: "none",
+                        }}
                       >
-                        Projeto no ar
-                        <SquareArrowOutUpRight className="size-5" color="#FFF" />
-                      </Link>
-                    </Button>
-                  </nav>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+                        <Badge className="px-2 py-1.5 rounded-3xl bg-[#292F39] text-white font-bold text-sm sm:px-3 sm:py-2 sm:text-base">
+                          NextJS
+                        </Badge>
 
-          <Button variant="seeMore" size="seeMore" className="bg-transparent border border-[#999999] font-bold py-2 ssm:py-3">
-            Ver mais
-          </Button>
-        </article>
-      </aside>
+                        <Badge className="px-2 py-1.5 rounded-3xl bg-[#292F39] text-white font-bold text-sm sm:px-3 sm:py-2 sm:text-base">
+                          TailwindCSS
+                        </Badge>
+
+                        <Badge className="px-2 py-1.5 rounded-3xl bg-[#292F39] text-white font-bold text-sm sm:px-3 sm:py-2 sm:text-base">
+                          Stripe
+                        </Badge>
+
+                        <Badge className="px-2 py-1.5 rounded-3xl bg-[#292F39] text-white font-bold text-sm sm:px-3 sm:py-2 sm:text-base">
+                          PostgreSQL
+                        </Badge>
+                      </div>
+                    </div>
+
+                    <div className="flex flex-col gap-4 sm:gap-6">
+                      <p className="leading-8 font-medium text-text-secondary line-clamp-3 sm:text-xss">
+                        Solução web desenvolvida para clínicas criarem seu
+                        perfil completo, com informações, fotos, serviços
+                        oferecidos, horários de funci...
+                      </p>
+
+                      <nav className="w-full flex items-center gap-3 msm:gap-6">
+                        <Link
+                          href="#"
+                          className="flex items-center justify-center px-4 py-3 rounded-[8px] border-1 border-[#3E3F40] hover:bg-light-boxes hover:scale-105 transition-all duration-300"
+                        >
+                          <FaGithub className="w-5 h-5" color="#FFF" />
+                        </Link>
+
+                        <Link
+                          href="#"
+                          className="flex items-center justify-center px-4 py-3 rounded-[8px] border-1 border-[#3E3F40] hover:bg-light-boxes hover:scale-105 transition-all duration-300"
+                        >
+                          <Image
+                            src={figmaIcon}
+                            alt="Ícone de acesso ao protótipo no Figma"
+                            className="w-5 h-5"
+                          />
+                        </Link>
+
+                        <Button
+                          asChild
+                          variant="seeMore"
+                          size="seeMore"
+                          className="flex-1"
+                        >
+                          <Link
+                            href="#"
+                            className="text-white font-bold flex items-center gap-2"
+                          >
+                            Projeto no ar
+                            <SquareArrowOutUpRight
+                              className="size-5"
+                              color="#FFF"
+                            />
+                          </Link>
+                        </Button>
+                      </nav>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="w-full overflow-hidden p-0 bg-transparent border-[#3E3F40] rounded-[12px]">
+                <CardContent className="p-0">
+                  <div className="relative h-[220px] sm:h-[280px]">
+                    <Image
+                      src={CapaExImg}
+                      alt="Capa de um projeto"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+
+                  <div className="flex flex-col gap-4 p-3 sm:gap-6 sm:p-4">
+                    <div className="flex flex-col gap-4">
+                      <h3 className="text-xss font-bold text-white sm:text-2xl">
+                        OdontoPRO – Plataforma SaaS para clínicas de saúde
+                      </h3>
+
+                      <div
+                        className="flex gap-2 items-center overflow-x-auto sm:gap-3"
+                        style={{
+                          scrollbarWidth: "none",
+                          msOverflowStyle: "none",
+                        }}
+                      >
+                        <Badge className="px-2 py-1.5 rounded-3xl bg-[#292F39] text-white font-bold text-sm sm:px-3 sm:py-2 sm:text-base">
+                          NextJS
+                        </Badge>
+
+                        <Badge className="px-2 py-1.5 rounded-3xl bg-[#292F39] text-white font-bold text-sm sm:px-3 sm:py-2 sm:text-base">
+                          TailwindCSS
+                        </Badge>
+
+                        <Badge className="px-2 py-1.5 rounded-3xl bg-[#292F39] text-white font-bold text-sm sm:px-3 sm:py-2 sm:text-base">
+                          Stripe
+                        </Badge>
+
+                        <Badge className="px-2 py-1.5 rounded-3xl bg-[#292F39] text-white font-bold text-sm sm:px-3 sm:py-2 sm:text-base">
+                          PostgreSQL
+                        </Badge>
+                      </div>
+                    </div>
+
+                    <div className="flex flex-col gap-4 sm:gap-6">
+                      <p className="leading-8 font-medium text-text-secondary line-clamp-3 sm:text-xss">
+                        Solução web desenvolvida para clínicas criarem seu
+                        perfil completo, com informações, fotos, serviços
+                        oferecidos, horários de funci...
+                      </p>
+
+                      <nav className="w-full flex items-center gap-3 msm:gap-6">
+                        <Link
+                          href="#"
+                          className="flex items-center justify-center px-4 py-3 rounded-[8px] border-1 border-[#3E3F40] hover:bg-light-boxes hover:scale-105 transition-all duration-300"
+                        >
+                          <FaGithub className="w-5 h-5" color="#FFF" />
+                        </Link>
+
+                        <Link
+                          href="#"
+                          className="flex items-center justify-center px-4 py-3 rounded-[8px] border-1 border-[#3E3F40] hover:bg-light-boxes hover:scale-105 transition-all duration-300"
+                        >
+                          <Image
+                            src={figmaIcon}
+                            alt="Ícone de acesso ao protótipo no Figma"
+                            className="w-5 h-5"
+                          />
+                        </Link>
+
+                        <Button
+                          asChild
+                          variant="seeMore"
+                          size="seeMore"
+                          className="flex-1"
+                        >
+                          <Link
+                            href="#"
+                            className="text-white font-bold flex items-center gap-2"
+                          >
+                            Projeto no ar
+                            <SquareArrowOutUpRight
+                              className="size-5"
+                              color="#FFF"
+                            />
+                          </Link>
+                        </Button>
+                      </nav>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="w-full overflow-hidden p-0 bg-transparent border-[#3E3F40] rounded-[12px]">
+                <CardContent className="p-0">
+                  <div className="relative h-[220px] sm:h-[280px]">
+                    <Image
+                      src={CapaExImg}
+                      alt="Capa de um projeto"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+
+                  <div className="flex flex-col gap-4 p-3 sm:gap-6 sm:p-4">
+                    <div className="flex flex-col gap-4">
+                      <h3 className="text-xss font-bold text-white sm:text-2xl">
+                        OdontoPRO – Plataforma SaaS para clínicas de saúde
+                      </h3>
+
+                      <div
+                        className="flex gap-2 items-center overflow-x-auto sm:gap-3"
+                        style={{
+                          scrollbarWidth: "none",
+                          msOverflowStyle: "none",
+                        }}
+                      >
+                        <Badge className="px-2 py-1.5 rounded-3xl bg-[#292F39] text-white font-bold text-sm sm:px-3 sm:py-2 sm:text-base">
+                          NextJS
+                        </Badge>
+
+                        <Badge className="px-2 py-1.5 rounded-3xl bg-[#292F39] text-white font-bold text-sm sm:px-3 sm:py-2 sm:text-base">
+                          TailwindCSS
+                        </Badge>
+
+                        <Badge className="px-2 py-1.5 rounded-3xl bg-[#292F39] text-white font-bold text-sm sm:px-3 sm:py-2 sm:text-base">
+                          Stripe
+                        </Badge>
+
+                        <Badge className="px-2 py-1.5 rounded-3xl bg-[#292F39] text-white font-bold text-sm sm:px-3 sm:py-2 sm:text-base">
+                          PostgreSQL
+                        </Badge>
+                      </div>
+                    </div>
+
+                    <div className="flex flex-col gap-4 sm:gap-6">
+                      <p className="leading-8 font-medium text-text-secondary line-clamp-3 sm:text-xss">
+                        Solução web desenvolvida para clínicas criarem seu
+                        perfil completo, com informações, fotos, serviços
+                        oferecidos, horários de funci...
+                      </p>
+
+                      <nav className="w-full flex items-center gap-3 msm:gap-6">
+                        <Link
+                          href="#"
+                          className="flex items-center justify-center px-4 py-3 rounded-[8px] border-1 border-[#3E3F40] hover:bg-light-boxes hover:scale-105 transition-all duration-300"
+                        >
+                          <FaGithub className="w-5 h-5" color="#FFF" />
+                        </Link>
+
+                        <Link
+                          href="#"
+                          className="flex items-center justify-center px-4 py-3 rounded-[8px] border-1 border-[#3E3F40] hover:bg-light-boxes hover:scale-105 transition-all duration-300"
+                        >
+                          <Image
+                            src={figmaIcon}
+                            alt="Ícone de acesso ao protótipo no Figma"
+                            className="w-5 h-5"
+                          />
+                        </Link>
+
+                        <Button
+                          asChild
+                          variant="seeMore"
+                          size="seeMore"
+                          className="flex-1"
+                        >
+                          <Link
+                            href="#"
+                            className="text-white font-bold flex items-center gap-2"
+                          >
+                            Projeto no ar
+                            <SquareArrowOutUpRight
+                              className="size-5"
+                              color="#FFF"
+                            />
+                          </Link>
+                        </Button>
+                      </nav>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            <Button
+              variant="seeMore"
+              size="seeMore"
+              className="bg-transparent border border-[#999999] font-bold py-2 ssm:py-3"
+            >
+              Ver mais
+            </Button>
+          </aside>
+        </TabsContent>
+        <TabsContent value="mobile">Mobile</TabsContent>
+        <TabsContent value="design">Design</TabsContent>
+        <TabsContent value="desktop">Desktop</TabsContent>
+      </Tabs>
     </section>
   );
 };

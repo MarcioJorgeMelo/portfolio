@@ -44,7 +44,7 @@ const Presentation = () => {
               className="absolute -bottom-2 left-19 stroke-2 ssm:left-22 ssm:stroke-3 msm:left-26 z-10 sm:hidden"
             />
             <div className="w-full flex flex-col items-start gap-2.5 sm:gap-12">
-              <div className="w-full max-w-[96px] bg-gradient-to-r from-primary-blue to-secondary-blue h-[5px] sm:h-2" />
+              <div className="w-full max-w-[96px] bg-gradient-to-r from-primary-blue to-secondary-blue h-[5px] sm:max-w-[148px] sm:h-2" />
               <h1 className="text-white text-2xl ssm:text-[26px] xsm:text-[28px] sm:text-[76px] font-bold">
                 Márcio Jorge,
                 <br />
