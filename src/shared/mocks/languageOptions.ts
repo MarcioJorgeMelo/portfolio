@@ -1,6 +1,5 @@
 import translateEnglish from "../../../public/translateEnglish.png";
 import translatePortuguese from "../../../public/translatePortuguese.png";
-import translateEspanish from "../../../public/translateEspanish.png";
 import { StaticImageData } from "next/image";
 
 interface languagesOptionsProps {
@@ -22,11 +21,5 @@ export const languagesOptions: languagesOptionsProps[] = [
     label: "EUA",
     image: translateEnglish,
     alt: "Translate to english",
-  },
-  {
-    id: "spanish",
-    label: "ESP",
-    image: translateEspanish,
-    alt: "Traducir al español",
   },
 ];
