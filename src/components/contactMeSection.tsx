@@ -4,7 +4,14 @@ import { socialLinks } from "@/shared/mocks/socialLinks";
 import Link from "next/link";
 import CurriculumDownloadButton from "./curriculumDownload";
 import { CurriculumDownloadButtonEnum } from "@/@types/curriculumDownloadButtonEnum";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "./ui/form";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "./ui/form";
 import { Card, CardContent } from "./ui/card";
 import { ContactMeFormData, useContactMeForm } from "./contactMeForm";
 import { Input } from "./ui/input";
@@ -29,16 +36,19 @@ const ContactMe = () => {
   }
 
   return (
-    <section id="contact" className="py-10 px-6 flex flex-col w-full gap-10">
-      <aside className="flex flex-col gap-4">
-        <div className="w-full max-w-[96px] bg-white h-2" />
-        <h1 className="text-white text-xgg font-bold">Entre em contato</h1>
-      </aside>
+    <section
+      id="contact"
+      className="py-10 px-6 flex flex-col w-full max-w-[1536px] mx-auto gap-10 sm:flex-row sm:py-28 sm:justify-between"
+    >
+      <aside className="flex flex-col gap-4 sm:max-w-[565px]">
+        <div className="w-full max-w-[96px] bg-white h-2 sm:max-w-[148px]" />
+        <h1 className="text-white text-xgg font-bold sm:text-[52px]">
+          Entre em contato
+        </h1>
 
-      <aside className="w-full flex flex-col gap-10">
         <div className="w-full flex flex-col gap-10">
           <div className="w-full flex flex-col gap-[18px]">
-            <h3 className="text-xss font-bold text-white">
+            <h3 className="text-xss font-bold text-white sm:text-[20px]">
               Vamos criar um novo projeto?
             </h3>
 
@@ -50,7 +60,9 @@ const ContactMe = () => {
           </div>
 
           <div className="flex flex-col gap-4">
-            <h3 className="text-xss font-bold text-white">Meios de contato</h3>
+            <h3 className="text-xss font-bold text-white sm:text-[20px]">
+              Meios de contato
+            </h3>
 
             <div className="flex flex-col gap-6">
               <div className="flex gap-5 items-center">
@@ -58,19 +70,19 @@ const ContactMe = () => {
                   <Link
                     key={link.id}
                     href={link.href}
-                    target={link.id === "email" ? '_self' : '_blank'}
+                    target={link.id === "email" ? "_self" : "_blank"}
                     rel="noopener noreferrer"
                     onMouseEnter={() => setHoveredId(link.id)}
                     onMouseLeave={() => setHoveredId(null)}
-                    className={`transition-opacity duration-500 ${hoveredId && hoveredId !== link.id
-                      ? "opacity-30"
-                      : "opacity-100"
-                      }`}
+                    className={`transition-opacity duration-500 ${
+                      hoveredId && hoveredId !== link.id
+                        ? "opacity-30"
+                        : "opacity-100"
+                    }`}
                   >
                     <link.icon className="w-6 h-6 text-white" />
                   </Link>
-                )
-                )}
+                ))}
               </div>
 
               <CurriculumDownloadButton
@@ -79,11 +91,13 @@ const ContactMe = () => {
             </div>
           </div>
         </div>
+      </aside>
 
+      <aside className="w-full flex flex-col gap-10 sm:w-fit">
         <section id="emailTo">
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)}>
-              <Card className="p-0 w-full px-6 py-10 rounded-[8px] bg-light-boxes border-0">
+              <Card className="p-0 w-full px-6 py-10 rounded-[8px] bg-light-boxes border-0 sm:p-10 sm:w-[492px]">
                 <CardContent className="p-0 flex flex-col gap-8">
                   <div className="gap-2.5">
                     <FormField
@@ -92,7 +106,7 @@ const ContactMe = () => {
                       render={({ field }) => (
                         <FormItem>
                           <FormLabel>
-                            <span className="text-xss text-white">
+                            <span className="text-xss text-white pb-2.5">
                               Informe seu nome
                             </span>
                           </FormLabel>
@@ -105,7 +119,8 @@ const ContactMe = () => {
                                 form.formState.errors.name
                                   ? "border-[#C42222] focus-visible:ring-[#C42222]"
                                   : "border-[#445166]"
-                              )}                           {...field}
+                              )}
+                              {...field}
                             />
                           </FormControl>
                           <FormMessage className="text-[#C42222]" />
@@ -120,7 +135,7 @@ const ContactMe = () => {
                     render={({ field }) => (
                       <FormItem className="gap-2.5">
                         <FormLabel>
-                          <span className="text-xss text-white">
+                          <span className="text-xss text-white pb-2.5">
                             Seu endereço de e-mail
                           </span>
                         </FormLabel>
@@ -135,7 +150,8 @@ const ContactMe = () => {
                               form.formState.errors.name
                                 ? "border-[#C42222] focus-visible:ring-[#C42222]"
                                 : "border-[#445166]"
-                            )}                          {...field}
+                            )}
+                            {...field}
                           />
                         </FormControl>
 
@@ -150,7 +166,7 @@ const ContactMe = () => {
                     render={({ field }) => (
                       <FormItem className="gap-2.5">
                         <FormLabel>
-                          <span className="text-xss text-white">
+                          <span className="text-xss text-white pb-2.5">
                             O assunto da sua mensagem
                           </span>
                         </FormLabel>
@@ -180,7 +196,7 @@ const ContactMe = () => {
                     render={({ field }) => (
                       <FormItem className="gap-2.5">
                         <FormLabel>
-                          <span className="text-xss text-white">
+                          <span className="text-xss text-white pb-2.5">
                             Escreva sua mensagem para mim
                           </span>
                         </FormLabel>
@@ -194,7 +210,8 @@ const ContactMe = () => {
                               form.formState.errors.name
                                 ? "border-[#C42222] focus-visible:ring-[#C42222]"
                                 : "border-[#445166]"
-                            )}                          {...field}
+                            )}
+                            {...field}
                           />
                         </FormControl>
 
@@ -203,9 +220,22 @@ const ContactMe = () => {
                     )}
                   />
 
-                  <Button type="submit" variant="underline" size="underline">
-                    ENVIAR MENSAGEM
-                    <ArrowRight className="size-5" color="#FFF" />
+                  <Button
+                    type="submit"
+                    variant="underline"
+                    size="underline"
+                    className="group relative overflow-hidden"
+                  >
+                    <span className="relative z-10 flex items-center gap-3">
+                      ENVIAR MENSAGEM
+                      <ArrowRight
+                        className="size-5 transition-transform duration-300 group-hover:translate-x-1"
+                        color="#FFF"
+                      />
+                    </span>
+
+                    {/* Underline animado */}
+                    <span className="absolute bottom-0 left-0 h-[2px] w-full origin-left scale-x-0 bg-white transition-transform duration-300 group-hover:scale-x-100" />
                   </Button>
                 </CardContent>
               </Card>
