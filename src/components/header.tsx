@@ -131,9 +131,8 @@ const Header = () => {
         <Button
           variant="translate"
           size="translate"
-          className={clsx({
+          className={clsx("inline-flex items-center", {
             hidden: isScrolled,
-            "inline-flex items-center": true,
           })}
           onClick={() => setTranslateEnglish(!translateEnglish)}
         >
