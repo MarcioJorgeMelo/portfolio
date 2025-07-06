@@ -20,25 +20,111 @@ import dockerIcon from "../../../public/Docker.png";
 import gitIcon from "../../../public/Git.png";
 import { StaticImageData } from "next/image";
 
-export const stacks: StaticImageData[] = [
-  reactIcon,
-  NextIcon,
-  typescriptIcon,
-  jestIcon,
-  figmaIcon,
-  tailwindIcon,
-  sassIcon,
-  cssIcon,
-  htmlIcon,
-  javascriptIcon,
-  dockerIcon,
-  nodeIcon,
-  expressIcon,
-  postgresIcon,
-  mongoIcon,
-  firebaseIcon,
-  githubIcon,
-  gitIcon,
-  bitbucketIcon,
-  clickupIcon,
+interface StackProps {
+  icon: StaticImageData;
+  name: string;
+  alt: string;
+}
+
+export const stacks: StackProps[] = [
+  {
+    icon: reactIcon,
+    name: "React",
+    alt: "Ícone do React",
+  },
+  {
+    icon: NextIcon,
+    name: "Next.js",
+    alt: "Ícone do Next.js",
+  },
+  {
+    icon: typescriptIcon,
+    name: "TypeScript",
+    alt: "Ícone do TypeScript",
+  },
+  {
+    icon: figmaIcon,
+    name: "Git",
+    alt: "Ícone do Git",
+  },
+  {
+    icon: tailwindIcon,
+    name: "TailwindCSS",
+    alt: "Ícone do Tailwind CSS",
+  },
+  {
+    icon: sassIcon,
+    name: "Sass",
+    alt: "Ícone do Git",
+  },
+  {
+    icon: cssIcon,
+    name: "CSS",
+    alt: "Ícone do Git",
+  },
+  {
+    icon: javascriptIcon,
+    name: "JavaScript",
+    alt: "Ícone do JavaScript",
+  },
+  {
+    icon: htmlIcon,
+    name: "HTML",
+    alt: "Ícone do Git",
+  },
+  {
+    icon: jestIcon,
+    name: "Jest",
+    alt: "Ícone do Git",
+  },
+  {
+    icon: nodeIcon,
+    name: "Node.js",
+    alt: "Ícone do Node.js",
+  },
+  {
+    icon: expressIcon,
+    name: "Express",
+    alt: "Ícone do Git",
+  },
+  {
+    icon: firebaseIcon,
+    name: "Firebase",
+    alt: "Ícone do Git",
+  },
+  {
+    icon: mongoIcon,
+    name: "MongoDB",
+    alt: "Ícone do Git",
+  },
+  {
+    icon: postgresIcon,
+    name: "PostgreSQL",
+    alt: "Ícone do Git",
+  },
+  {
+    icon: gitIcon,
+    name: "Git",
+    alt: "Ícone do Git",
+  },
+  {
+    icon: dockerIcon,
+    name: "Docker",
+    alt: "Ícone do Docker",
+  },
+  {
+    icon: bitbucketIcon,
+    name: "Bitbucket",
+    alt: "Ícone do Git",
+  },
+  {
+    icon: clickupIcon,
+    name: "ClickUp",
+    alt: "Ícone do Git",
+  },
+  {
+    icon: githubIcon,
+    name: "Github",
+    alt: "Ícone do Git",
+  },
 ];
