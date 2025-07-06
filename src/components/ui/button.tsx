@@ -23,7 +23,7 @@ const buttonVariants = cva(
         download:
           "bg-primary-blue text-white font-bold text-[14px] flex flex-col items-center justify-center gap-1.5",
         seeMore:
-          "self-center bg-primary-blue flex items-center justify-center text-white font-bold text-[16px] xsm:text-[18px] hover:scale-105",
+          "self-center bg-primary-blue flex items-center justify-center text-white font-bold text-[16px] xsm:text-xss sm:text-[20px] hover:scale-105 transition-all duration-300",
         emailButton: "bg-transparent",
         underline:
           "w-fit text-base text-white flex items-center gap-3 pb-1.5 border-b-[1.5px] border-[#445166] rounded-none",
