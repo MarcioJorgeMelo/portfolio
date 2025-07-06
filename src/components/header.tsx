@@ -2,18 +2,11 @@
 
 import { navbarOptions } from "@/shared/mocks/navbarOptions";
 import clsx from "clsx";
-import { ArrowLeftRight, ChevronDown, CodeXml } from "lucide-react";
+import { ArrowLeftRight, CodeXml } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { Button } from "./ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuRadioGroup,
-  DropdownMenuRadioItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { languagesOptions } from "@/shared/mocks/languageOptions";
 
 const Header = () => {
@@ -21,11 +14,7 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const [language, setLanguage] = useState("BRA");
-
-  const selectedLanguage = languagesOptions.find(
-    (lang) => lang.label === language
-  );
+  const [translateEnglish, setTranslateEnglish] = useState(false);
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
@@ -139,54 +128,31 @@ const Header = () => {
           </Link>
         ))}
 
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button
-              variant="translate"
-              size="translate"
-              className={clsx({
-                hidden: isScrolled,
-                "inline-flex items-center": true,
-              })}
-            >
-              <Image
-                // eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
-                src={selectedLanguage?.image!}
-                // eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
-                alt={selectedLanguage?.alt!}
-                className="size-6 rounded-full"
-              />
+        <Button
+          variant="translate"
+          size="translate"
+          className={clsx({
+            hidden: isScrolled,
+            "inline-flex items-center": true,
+          })}
+          onClick={() => setTranslateEnglish(!translateEnglish)}
+        >
+          <Image
+            src={
+              translateEnglish
+                ? languagesOptions[0].image
+                : languagesOptions[1].image
+            }
+            alt={
+              translateEnglish
+                ? languagesOptions[0].alt
+                : languagesOptions[1].alt
+            }
+            className="size-6 rounded-full"
+          />
 
-              <ChevronDown className="size-5" color="#FFF" />
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent
-            className="w-fit bg-[#292F39] border-0"
-            sideOffset={8}
-          >
-            <DropdownMenuRadioGroup
-              value={language}
-              onValueChange={setLanguage}
-            >
-              {languagesOptions
-                .filter((languageOption) => languageOption.label !== language)
-                .map((languageOption) => (
-                  <DropdownMenuRadioItem
-                    value={languageOption.label}
-                    className="w-fit p-0 px-2 py-1"
-                    key={languageOption.id}
-                  >
-                    <Image
-                      src={languageOption.image}
-                      alt={languageOption.alt}
-                      className="size-6 rounded-full"
-                    />
-                    <ArrowLeftRight className="size-5 rounded-full text-white" />
-                  </DropdownMenuRadioItem>
-                ))}
-            </DropdownMenuRadioGroup>
-          </DropdownMenuContent>
-        </DropdownMenu>
+          <ArrowLeftRight className="size-5" color="#FFF" />
+        </Button>
       </nav>
     </header>
   );
