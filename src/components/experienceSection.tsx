@@ -2,7 +2,7 @@ const Experience = () => {
   return (
     <section
       id="experience"
-      className="py-10 w-full bg-light-background sm:py-30"
+      className="py-10 w-full bg-light-background sm:py-40"
     >
       <div className="w-full sm:max-w-[1536px] mx-auto flex flex-col gap-10 px-4 sm:px-0">
         <aside className="flex flex-col gap-4">
