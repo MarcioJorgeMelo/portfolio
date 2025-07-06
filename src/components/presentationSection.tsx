@@ -126,7 +126,7 @@ const Presentation = () => {
           </p>
 
           <Link
-            href="#about"
+            href="#projects"
             className="group relative w-fit flex items-center gap-3 pb-1.5 text-white font-bold"
           >
             <span className="absolute left-0 bottom-0 w-full h-[2px] bg-[#445166]" />
