@@ -5,6 +5,7 @@ import NavbarMobile from "@/components/navbarMobile";
 import { Toaster } from "react-hot-toast";
 import Header from "@/components/header";
 import TranslateButton from "@/components/translateButton";
+import Footer from "@/components/footer";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -66,6 +67,10 @@ export default function RootLayout({
 
           <div className="block sm:hidden">
             <NavbarMobile />
+          </div>
+
+          <div className="hidden sm:block">
+            <Footer />
           </div>
         </main>
       </body>
