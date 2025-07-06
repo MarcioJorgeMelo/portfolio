@@ -1,10 +1,15 @@
 const Experience = () => {
   return (
-    <section id="experience" className="py-30 w-full bg-light-background">
+    <section
+      id="experience"
+      className="py-10 w-full bg-light-background sm:py-30"
+    >
       <div className="w-full sm:max-w-[1536px] mx-auto flex flex-col gap-10 px-4 sm:px-0">
         <aside className="flex flex-col gap-4">
-          <div className="w-full max-w-[96px] bg-white h-2" />
-          <h1 className="text-white text-xgg font-bold">Experiência</h1>
+          <div className="w-full max-w-[96px] bg-white h-2 sm:max-w-[148px]" />
+          <h1 className="text-white text-xgg font-bold sm:text-[52px]">
+            Experiência
+          </h1>
         </aside>
 
         <aside className="w-full flex flex-col gap-10 sm:flex-row sm:gap-20">
