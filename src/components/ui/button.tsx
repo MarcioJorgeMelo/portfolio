@@ -35,7 +35,7 @@ const buttonVariants = cva(
         sm: "h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
         lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
         icon: "size-9",
-        download: "w-full h-auto px-[14px] ssm:px-[28px] py-2",
+        download: "w-full h-auto px-[8px] ssm:px-[22px] py-2",
         seeMore: "px-3 ssm:px-6 py-3",
         emailButton: "w-fit",
         underline: "w-fit px-0 pb-1.5",
