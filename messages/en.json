@@ -20,6 +20,13 @@
     "entryIn": "October 2024 - At the momento (X months)",
     "job-description": "I am part of the Development and Innovation team at LIVSAÚDE, contributing to the creation and evolution of internal systems, web portals and mobile applications with a focus on performance, usability and user experience. I use <react>React</react> and <native>React Native</native> to build modern and accessible solutions, <figma>Figma</figma> for analysis and adaptation of layouts and <electron>Electron</electron> in desktop applications. I work on strategic projects involving telemedicine, health apps and administrative tools, supporting the digital transformation of the company, a reference in innovation in the sector."
   },
+  "Projects": {
+    "title": "Projects",
+    "project-title": "OdontoPRO – SaaS platform for healthcare clinic",
+    "project-description": "Web solution developed for clinics to create their complete profile, with information, photos, services offered, opening hou...",
+    "deploy-button": "Project deployed",
+    "seeMore-button": "See more"
+  },
   "Navigation": {
     "presentation": "Presentation",
     "experience": "Experience",

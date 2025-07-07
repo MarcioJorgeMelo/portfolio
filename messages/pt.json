@@ -20,6 +20,13 @@
     "entryIn": "Outubro 2024 - No momento (X meses)",
     "job-description": "Faço parte do time de Desenvolvimento E Inovação da LIVSAÚDE, contribuindo na criação e evolução de sistemas internos, portais web e aplicativos mobile com foco em performance, usabilidade e experiência do usuário. Utilizo <react>React</react> e <native>React Native</native> para construir soluções modernas e acessíveis, <figma>Figma</figma> para análise e adaptação de layouts e <electron>Electron</electron> em aplicações desktop. Atuo em projetos estratégicos que envolvem telemedicina, apps de saúde e ferramentas administrativas, apoiando a transformação digital da empresa, referência em inovação no setor."
   },
+  "Projects": {
+    "title": "Projetos",
+    "project-title": "OdontoPRO – Plataforma SaaS para clínicas de saúde",
+    "project-description": "Solução web desenvolvida para clínicas criarem seu perfil completo, com informações, fotos, serviços oferecidos, horários de funci...",
+    "deploy-button": "Projeto no ar",
+    "seeMore-button": "Ver mais"
+  },
   "Navigation": {
     "presentation": "Início",
     "experience": "Experiência",
