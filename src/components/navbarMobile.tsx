@@ -1,19 +1,22 @@
 "use client";
 
 import { useActiveSection } from "@/shared/hooks/useActiveSection";
-import { navbarOptions } from "@/shared/mocks/navbarOptions";
+import { useNavigationOptions } from "@/shared/mocks/navigationOptions";
 import clsx from "clsx";
 
 const NavbarMobile = () => {
+
+  const navigationOptions = useNavigationOptions();
+
   const activeSection = useActiveSection(
-    navbarOptions.map((option) => {
+    navigationOptions.map((option) => {
       return option.id;
     })
   );
 
   return (
     <nav className="w-full bg-dark-background px-6 py-3.5 flex gap-6 items-center justify-between border-t border-[#2D343F]">
-      {navbarOptions.map((option) => (
+      {navigationOptions.map((option) => (
         <a
           key={option.id}
           href={option.href}
