@@ -21,6 +21,7 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "./ui/button";
 import clsx from "clsx";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -28,6 +29,8 @@ const manrope = Manrope({
 });
 
 const ContactMe = () => {
+  const t = useTranslations("ContactMe");
+
   const [hoveredId, setHoveredId] = useState<string | null>(null);
   const form = useContactMeForm();
 
@@ -43,25 +46,23 @@ const ContactMe = () => {
       <aside className="flex flex-col gap-4 sm:max-w-[565px]">
         <div className="w-full max-w-[96px] bg-white h-2 sm:max-w-[148px]" />
         <h1 className="text-white text-xgg font-bold sm:text-[52px]">
-          Entre em contato
+          {t("title")}
         </h1>
 
         <div className="w-full flex flex-col gap-10">
           <div className="w-full flex flex-col gap-[18px]">
             <h3 className="text-xss font-bold text-white sm:text-[20px]">
-              Vamos criar um novo projeto?
+              {t("subtitle")}
             </h3>
 
             <p className="text-xss text-text-secondary leading-8">
-              Gosto de transformar ideias em interfaces modernas, funcionais e
-              com personalidade própria. Se você tem um projeto em mente e quer
-              tirar do papel com qualidade e criatividade, entre em contato.
+              {t("description")}
             </p>
           </div>
 
           <div className="flex flex-col gap-4">
             <h3 className="text-xss font-bold text-white sm:text-[20px]">
-              Meios de contato
+              {t("contactMe-area")}
             </h3>
 
             <div className="flex flex-col gap-6">
@@ -107,12 +108,12 @@ const ContactMe = () => {
                         <FormItem>
                           <FormLabel>
                             <span className="text-xss text-white pb-2.5">
-                              Informe seu nome
+                              {t("label-name")}
                             </span>
                           </FormLabel>
                           <FormControl>
                             <Input
-                              placeholder="Digite seu nome..."
+                              placeholder={t("placeholder-name")}
                               className={clsx(
                                 `${manrope.className} px-3 py-6 rounded-[10px] text-[#93A2B7] placeholder:text-[#93A2B7]`,
                                 "focus-visible:border-white focus-visible:ring-white/70 focus-visible:ring-[1px]",
@@ -136,13 +137,13 @@ const ContactMe = () => {
                       <FormItem className="gap-2.5">
                         <FormLabel>
                           <span className="text-xss text-white pb-2.5">
-                            Seu endereço de e-mail
+                            {t("label-email")}
                           </span>
                         </FormLabel>
 
                         <FormControl>
                           <Input
-                            placeholder="Digite seu email..."
+                            placeholder={t("placeholder-email")}
                             type="email"
                             className={clsx(
                               `${manrope.className} px-3 py-6 rounded-[10px] text-[#93A2B7] placeholder:text-[#93A2B7]`,
@@ -167,13 +168,13 @@ const ContactMe = () => {
                       <FormItem className="gap-2.5">
                         <FormLabel>
                           <span className="text-xss text-white pb-2.5">
-                            O assunto da sua mensagem
+                            {t("label-subject")}
                           </span>
                         </FormLabel>
 
                         <FormControl>
                           <Input
-                            placeholder="Digite o assunto..."
+                            placeholder={t("placeholder-subject")}
                             className={clsx(
                               `${manrope.className} px-3 py-6 rounded-[10px] text-[#93A2B7] placeholder:text-[#93A2B7]`,
                               "focus-visible:border-white focus-visible:ring-white/70 focus-visible:ring-[1px]",
@@ -197,13 +198,13 @@ const ContactMe = () => {
                       <FormItem className="gap-2.5">
                         <FormLabel>
                           <span className="text-xss text-white pb-2.5">
-                            Escreva sua mensagem para mim
+                            {t("label-message")}
                           </span>
                         </FormLabel>
 
                         <FormControl>
                           <Textarea
-                            placeholder="Digite a mensagem..."
+                            placeholder={t("placeholder-message")}
                             className={clsx(
                               `${manrope.className} border-[#445166] h-[140px] px-3 py-3 text-[#93A2B7] placeholder:text-[#93A2B7] resize-none`,
                               "focus-visible:border-white focus-visible:ring-white/70 focus-visible:ring-[1px]",
@@ -227,7 +228,7 @@ const ContactMe = () => {
                     className="group relative overflow-hidden"
                   >
                     <span className="relative z-10 flex items-center gap-3">
-                      ENVIAR MENSAGEM
+                      {t("send-message")}
                       <ArrowRight
                         className="size-5 transition-transform duration-300 group-hover:translate-x-1"
                         color="#FFF"
