@@ -1,0 +1,29 @@
+{
+  "Presentation": {
+    "title1": "Márcio Jorge,",
+    "title2": "Desenvolvedor Frontend",
+    "title-description": "Desenvolvedor Frontend com foco em UI/UX, especialista em desenvolver interfaces modernas, intuitivas e de grande impacto. Uno criatividade e domínio técnico para transformar ideias em experiências digitais que encantam e geram resultados.",
+    "about-title": "SOBRE MIM",
+    "about-description": "Minha jornada no desenvolvimento é impulsionada pela busca constante por soluções inovadoras e pela excelência na performance e usabilidade. Com foco em <react>ReactJS</react>, <next>NextJS</next> e <ts>Typescript</ts>, transformo ideias complexas em interfaces elegantes e responsivas.",
+    "about-link": "SAIBA MAIS",
+    "projects-title": "MEUS PROJETOS",
+    "projects-description": "Apresento alguns dos meus trabalhos mais relevantes, que demonstram minha proficiência e dedicação em construir interfaces de usuário de alta qualidade. Cada projeto reflete minha abordagem em resolver problemas complexos com soluções criativas e eficientes.",
+    "projects-link": "VER PROJETOS",
+    "contactMe-section": "ENTRE EM CONTATO",
+    "row-button": "Baixar currículo",
+    "col-button1": "Baixar",
+    "col-button2": "currículo"
+  },
+  "Navigation": {
+    "presentation": "Início",
+    "experience": "Experiência",
+    "projects": "Projetos",
+    "about": "Sobre",
+    "contact": "Contato"
+  },
+  "TranslateOption": {
+    "language": "en",
+    "image": "/translateEnglish.png",
+    "alt": "Trocar para idioma - Inglês"
+  }
+}

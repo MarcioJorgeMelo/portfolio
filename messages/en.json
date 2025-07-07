@@ -1,0 +1,29 @@
+{
+  "Presentation": {
+    "title1": "Márcio Jorge,",
+    "title2": "Frontend Developer",
+    "title-description": "Frontend developer focused on UI/UX, specialized in developing modern, intuitive and high-impact interfaces. I combine creativity and technical expertise to transform ideas into digital experiences that delight and generate results.",
+    "about-title": "ABOUT",
+    "about-description": "My development journey is driven by the constant search for innovative solutions and excellence in performance and usability. With a focus on <react>ReactJS</react>, <next>NextJS</next> e <ts>Typescript</ts>, I transform complex ideas into elegant and responsive interfaces.",
+    "about-link": "SEE MORE",
+    "projects-title": "MY PROJECTS",
+    "projects-description": "Here are some of my most relevant works, which demonstrate my proficiency and dedication in building high-quality user interfaces. Each project reflects my approach to solving complex problems with creative and efficient solutions.",
+    "projects-link": "SEE PROJECTS",
+    "contactMe-section": "GET IN TOUCH",
+    "row-button": "Curriculum",
+    "col-button1": "Download",
+    "col-button2": "curriculum"
+  },
+  "Navigation": {
+    "presentation": "Presentation",
+    "experience": "Experience",
+    "projects": "Projects",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "TranslateOption": {
+    "language": "pt",
+    "image": "/translatePortuguese.png",
+    "alt": "Change language - Portuguese"
+  }
+}
