@@ -35,6 +35,21 @@
     "card-finish": "Let's build something <strong>extraordinary</strong> together!",
     "text-divise": "Knowledge of the following languages ​and tools..."
   },
+  "ContactMe": {
+    "title": "Get in touch",
+    "subtitle": "Shall we create a new project?",
+    "description": "I like to transform ideas into modern, functional interfaces with their own personality. If you have a project in mind and want to get it off the ground with quality and creativity, get in touch.",
+    "contactMe-area": "Contact methods",
+    "label-name": "Enter your name",
+    "placeholder-name": "Enter your name...",
+    "label-email": "Enter your email",
+    "placeholder-email": "Enter your email...",
+    "label-subject": "The subject of the message",
+    "placeholder-subject": "Enter the subject...",
+    "label-message": "Write your message to me",
+    "placeholder-message": "Enter the message...",
+    "send-message": "SEND MESSAGE"
+  },
   "Navigation": {
     "presentation": "Presentation",
     "experience": "Experience",
