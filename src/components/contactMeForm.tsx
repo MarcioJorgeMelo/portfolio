@@ -1,17 +1,18 @@
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useTranslations } from "next-intl";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-const contactMeSchema = z.object({
-  name: z.string().min(1, { message: "O nome é obrigatório" }),
-  email: z.string().min(1, { message: "O email é obrigatório" }),
-  subject: z.string().min(1, { message: "O assunto é obrigatório" }),
-  message: z.string().min(1, { message: "A mensagem é obrigatória" }),
-});
-
-export type ContactMeFormData = z.infer<typeof contactMeSchema>;
-
 export function useContactMeForm() {
+  const t = useTranslations("Form");
+
+  const contactMeSchema = z.object({
+    name: z.string().min(1, { message: t("name-message") }),
+    email: z.string().min(1, { message: t("email-message") }),
+    subject: z.string().min(1, { message: t("subject-message") }),
+    message: z.string().min(1, { message: t("message-message") }),
+  });
+
   return useForm<ContactMeFormData>({
     resolver: zodResolver(contactMeSchema),
     defaultValues: {
@@ -20,5 +21,18 @@ export function useContactMeForm() {
       subject: "",
       message: "",
     },
+  });
+}
+
+export type ContactMeFormData = z.infer<
+  ReturnType<typeof createContactMeSchema>
+>;
+
+export function createContactMeSchema(t: ReturnType<typeof useTranslations>) {
+  return z.object({
+    name: z.string().min(1, { message: t("name-message") }),
+    email: z.string().min(1, { message: t("email-message") }),
+    subject: z.string().min(1, { message: t("subject-message") }),
+    message: z.string().min(1, { message: t("message-message") }),
   });
 }
