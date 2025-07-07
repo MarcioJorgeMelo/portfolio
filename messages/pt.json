@@ -50,6 +50,15 @@
     "placeholder-message": "Digite a mensagem...",
     "send-message": "ENVIAR MENSAGEM"
   },
+  "Footer": {
+    "message": "@ 2025 Márcio Jorge. Todos os direitos reservados."
+  },
+  "Form": {
+    "name-message": "O nome é obrigatório",
+    "email-message": "O e-mail é obrigatório",
+    "subject-message": "O assunto é obrigatório",
+    "message-message": "A mensagem é obrigatório"
+  },
   "Navigation": {
     "presentation": "Início",
     "experience": "Experiência",
