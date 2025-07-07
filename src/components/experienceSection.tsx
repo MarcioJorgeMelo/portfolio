@@ -1,4 +1,8 @@
+import { useTranslations } from "next-intl";
+
 const Experience = () => {
+  const t = useTranslations("Experience");
+
   return (
     <section
       id="experience"
@@ -8,7 +12,7 @@ const Experience = () => {
         <aside className="flex flex-col gap-4">
           <div className="w-full max-w-[96px] bg-white h-2 sm:max-w-[148px]" />
           <h1 className="text-white text-xgg font-bold sm:text-[52px]">
-            Experiência
+            {t("title")}
           </h1>
         </aside>
 
@@ -22,11 +26,11 @@ const Experience = () => {
           <div className="w-full flex flex-col gap-6">
             <div className="flex flex-col gap-1.5 sm:flex-row sm:items-center sm:gap-8">
               <h3 className="text-xss font-bold text-white sm:text-[20px]">
-                Desenvolvedor Frontend
+                {t("job")}
               </h3>
 
               <p className="text-sm text-text-secondary sm:text-base">
-                Outubro 2024 - No momento (X meses)
+                {t("entryIn")}
               </p>
             </div>
 
@@ -36,22 +40,20 @@ const Experience = () => {
               </h3>
 
               <p className="font-medium leading-8 text-text-secondary sm:text-xss">
-                Faço parte do time de{" "}
-                <span className="font-bold text-white">
-                  Desenvolvimento E Inovação
-                </span>{" "}
-                da LIVSAÚDE, contribuindo na criação e evolução de sistemas
-                internos, portais web e aplicativos mobile com foco em
-                performance, usabilidade e experiência do usuário. Utilizo{" "}
-                <span className="font-bold text-white">React</span> e{" "}
-                <span className="font-bold text-white">React Native</span> para
-                construir soluções modernas e acessíveis, Figma para análise e
-                adaptação de layouts e{" "}
-                <span className="font-bold text-white">Electron</span> em
-                aplicações desktop. Atuo em projetos estratégicos que envolvem
-                telemedicina, apps de saúde e ferramentas administrativas,
-                apoiando a transformação digital da empresa, referência em
-                inovação no setor.
+                {t.rich("job-description", {
+                  react: (chunks) => (
+                    <span className="text-white font-bold">{chunks}</span>
+                  ),
+                  native: (chunks) => (
+                    <span className="text-white font-bold">{chunks}</span>
+                  ),
+                  figma: (chunks) => (
+                    <span className="text-white font-bold">{chunks}</span>
+                  ),
+                  electron: (chunks) => (
+                    <span className="text-white font-bold">{chunks}</span>
+                  ),
+                })}
               </p>
             </div>
           </div>
