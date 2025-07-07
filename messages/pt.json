@@ -1,0 +1,74 @@
+{
+  "Presentation": {
+    "title1": "Márcio Jorge,",
+    "title2": "Desenvolvedor Frontend",
+    "title-description": "Desenvolvedor Frontend com foco em UI/UX, especialista em desenvolver interfaces modernas, intuitivas e de grande impacto. Uno criatividade e domínio técnico para transformar ideias em experiências digitais que encantam e geram resultados.",
+    "about-title": "SOBRE MIM",
+    "about-description": "Minha jornada no desenvolvimento é impulsionada pela busca constante por soluções inovadoras e pela excelência na performance e usabilidade. Com foco em <react>ReactJS</react>, <next>NextJS</next> e <ts>Typescript</ts>, transformo ideias complexas em interfaces elegantes e responsivas.",
+    "about-link": "SAIBA MAIS",
+    "projects-title": "MEUS PROJETOS",
+    "projects-description": "Apresento alguns dos meus trabalhos mais relevantes, que demonstram minha proficiência e dedicação em construir interfaces de usuário de alta qualidade. Cada projeto reflete minha abordagem em resolver problemas complexos com soluções criativas e eficientes.",
+    "projects-link": "VER PROJETOS",
+    "contactMe-section": "ENTRE EM CONTATO",
+    "row-button": "Baixar currículo",
+    "col-button1": "Baixar",
+    "col-button2": "currículo"
+  },
+  "Experience": {
+    "title": "Experiência",
+    "job": "Desenvolvedor Frontend",
+    "entryIn": "Outubro 2024 - No momento (X meses)",
+    "job-description": "Faço parte do time de Desenvolvimento E Inovação da LIVSAÚDE, contribuindo na criação e evolução de sistemas internos, portais web e aplicativos mobile com foco em performance, usabilidade e experiência do usuário. Utilizo <react>React</react> e <native>React Native</native> para construir soluções modernas e acessíveis, <figma>Figma</figma> para análise e adaptação de layouts e <electron>Electron</electron> em aplicações desktop. Atuo em projetos estratégicos que envolvem telemedicina, apps de saúde e ferramentas administrativas, apoiando a transformação digital da empresa, referência em inovação no setor."
+  },
+  "Projects": {
+    "title": "Projetos",
+    "project-title": "OdontoPRO – Plataforma SaaS para clínicas de saúde",
+    "project-description": "Solução web desenvolvida para clínicas criarem seu perfil completo, com informações, fotos, serviços oferecidos, horários de funci...",
+    "deploy-button": "Projeto no ar",
+    "seeMore-button": "Ver mais"
+  },
+  "About": {
+    "title": "Sobre mim",
+    "card-description1": "Olá, sou Márcio Jorge, <job>Desenvolvedor Frontend</job> com <experience>1 ano de experiência</experience>. Com forte <design>foco em UI/UX</design>, combino design e tecnologia para construir projetos inovadores e impactantes, ajudando empresas a se destacarem no mundo digital.",
+    "card-description2": "Sou especialista em desenvolvimento de interfaces fluidas, intuitivas, acessíveis e responsivas para sites e aplicativos. Tenho olhar atento aos detalhes e sou movido pela <strong>busca constante por inovação</strong>, transformando ideias em experiências digitais cativantes e funcionais.",
+    "card-description3": "Aliando <strong>criatividade e conhecimento técnico</strong>, entrego soluções que não apenas encantam os usuários, mas também geram resultados reais.",
+    "card-finish": "Vamos juntos construir algo <strong>extraordinário!</strong>",
+    "text-divise": "Conhecimento nas seguintes linguagens e ferramentas..."
+  },
+  "ContactMe": {
+    "title": "Entre em contato",
+    "subtitle": "Vamos criar um novo projeto?",
+    "description": "Gosto de transformar ideias em interfaces modernas, funcionais e com personalidade própria. Se você tem um projeto em mente e quer tirar do papel com qualidade e criatividade, entre em contato.",
+    "contactMe-area": "Meios de contato",
+    "label-name": "Informe seu nome",
+    "placeholder-name": "Digite seu nome...",
+    "label-email": "Informe seu e-mail",
+    "placeholder-email": "Digite seu e-mail...",
+    "label-subject": "O assunto da mensagem",
+    "placeholder-subject": "Digite o assunto...",
+    "label-message": "Escreva sua mensagem para mim",
+    "placeholder-message": "Digite a mensagem...",
+    "send-message": "ENVIAR MENSAGEM"
+  },
+  "Footer": {
+    "message": "@ 2025 Márcio Jorge. Todos os direitos reservados."
+  },
+  "Form": {
+    "name-message": "O nome é obrigatório",
+    "email-message": "O e-mail é obrigatório",
+    "subject-message": "O assunto é obrigatório",
+    "message-message": "A mensagem é obrigatório"
+  },
+  "Navigation": {
+    "presentation": "Início",
+    "experience": "Experiência",
+    "projects": "Projetos",
+    "about": "Sobre",
+    "contact": "Contato"
+  },
+  "TranslateOption": {
+    "language": "en",
+    "image": "/translateEnglish.png",
+    "alt": "Trocar para idioma - Inglês"
+  }
+}

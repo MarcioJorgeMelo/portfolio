@@ -1,0 +1,74 @@
+{
+  "Presentation": {
+    "title1": "Márcio Jorge,",
+    "title2": "Frontend Developer",
+    "title-description": "Frontend developer focused on UI/UX, specialized in developing modern, intuitive and high-impact interfaces. I combine creativity and technical expertise to transform ideas into digital experiences that delight and generate results.",
+    "about-title": "ABOUT",
+    "about-description": "My development journey is driven by the constant search for innovative solutions and excellence in performance and usability. With a focus on <react>ReactJS</react>, <next>NextJS</next> e <ts>Typescript</ts>, I transform complex ideas into elegant and responsive interfaces.",
+    "about-link": "SEE MORE",
+    "projects-title": "MY PROJECTS",
+    "projects-description": "Here are some of my most relevant works, which demonstrate my proficiency and dedication in building high-quality user interfaces. Each project reflects my approach to solving complex problems with creative and efficient solutions.",
+    "projects-link": "SEE PROJECTS",
+    "contactMe-section": "GET IN TOUCH",
+    "row-button": "Curriculum",
+    "col-button1": "Download",
+    "col-button2": "curriculum"
+  },
+  "Experience": {
+    "title": "Experience",
+    "job": "Frontend Developer",
+    "entryIn": "October 2024 - At the momento (X months)",
+    "job-description": "I am part of the Development and Innovation team at LIVSAÚDE, contributing to the creation and evolution of internal systems, web portals and mobile applications with a focus on performance, usability and user experience. I use <react>React</react> and <native>React Native</native> to build modern and accessible solutions, <figma>Figma</figma> for analysis and adaptation of layouts and <electron>Electron</electron> in desktop applications. I work on strategic projects involving telemedicine, health apps and administrative tools, supporting the digital transformation of the company, a reference in innovation in the sector."
+  },
+  "Projects": {
+    "title": "Projects",
+    "project-title": "OdontoPRO – SaaS platform for healthcare clinic",
+    "project-description": "Web solution developed for clinics to create their complete profile, with information, photos, services offered, opening hou...",
+    "deploy-button": "Project deployed",
+    "seeMore-button": "See more"
+  },
+  "About": {
+    "title": "About me",
+    "card-description1": "Hello, I'm Márcio Jorge, <job>Frontend Developer</job> with <experience>1 year of experience</experience>. With a strong <design>focus on UI/UX</design>, I combine design and technology to build innovative and impactful projects, helping companies stand out in the digital world.",
+    "card-description2": "I specialize in developing fluid, intuitive, accessible and responsive interfaces for websites and applications. I have an eye for detail and am driven by the <strong>constant search for innovation</strong>, transforming ideas into captivating and functional digital experiences.",
+    "card-description3": "Combining <strong>creativity and technical knowledge</strong>, I deliver solutions that not only delight users, but also generate real results.",
+    "card-finish": "Let's build something <strong>extraordinary</strong> together!",
+    "text-divise": "Knowledge of the following languages ​and tools..."
+  },
+  "ContactMe": {
+    "title": "Get in touch",
+    "subtitle": "Shall we create a new project?",
+    "description": "I like to transform ideas into modern, functional interfaces with their own personality. If you have a project in mind and want to get it off the ground with quality and creativity, get in touch.",
+    "contactMe-area": "Contact methods",
+    "label-name": "Enter your name",
+    "placeholder-name": "Enter your name...",
+    "label-email": "Enter your email",
+    "placeholder-email": "Enter your email...",
+    "label-subject": "The subject of the message",
+    "placeholder-subject": "Enter the subject...",
+    "label-message": "Write your message to me",
+    "placeholder-message": "Enter the message...",
+    "send-message": "SEND MESSAGE"
+  },
+  "Footer": {
+    "message": "@ 2025 Márcio Jorge. All rights reserved."
+  },
+  "Form": {
+    "name-message": "Name is mandatory",
+    "email-message": "E-mail is mandatory",
+    "subject-message": "Subject is mandatory",
+    "message-message": "Message is mandatory"
+  },
+  "Navigation": {
+    "presentation": "Presentation",
+    "experience": "Experience",
+    "projects": "Projects",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "TranslateOption": {
+    "language": "pt",
+    "image": "/translatePortuguese.png",
+    "alt": "Change language - Portuguese"
+  }
+}

@@ -8,8 +8,11 @@ import { Button } from "./ui/button";
 import { FaGithub } from "react-icons/fa";
 import figmaIcon from "../../public/Figma.png";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useTranslations } from "next-intl";
 
 const Projects = () => {
+  const t = useTranslations("Projects");
+
   return (
     <section
       id="projects"
@@ -18,7 +21,7 @@ const Projects = () => {
       <aside className="flex flex-col gap-4">
         <div className="w-full max-w-[96px] bg-white h-2 sm:max-w-[148px]" />
         <h1 className="text-white text-xgg font-bold sm:text-[52px]">
-          Projetos
+          {t("title")}
         </h1>
       </aside>
 
@@ -66,7 +69,7 @@ const Projects = () => {
                   <div className="flex flex-col gap-4 p-3 sm:gap-6 sm:p-4">
                     <div className="flex flex-col gap-4">
                       <h3 className="text-xss font-bold text-white sm:text-2xl">
-                        OdontoPRO – Plataforma SaaS para clínicas de saúde
+                        {t("project-title")}
                       </h3>
 
                       <div
@@ -96,9 +99,7 @@ const Projects = () => {
 
                     <div className="flex flex-col gap-4 sm:gap-6">
                       <p className="leading-8 font-medium text-text-secondary line-clamp-3 sm:text-xss">
-                        Solução web desenvolvida para clínicas criarem seu
-                        perfil completo, com informações, fotos, serviços
-                        oferecidos, horários de funci...
+                        {t("project-description")}
                       </p>
 
                       <nav className="w-full flex items-center gap-3 msm:gap-6">
@@ -130,7 +131,7 @@ const Projects = () => {
                             href="#"
                             className="text-white font-bold flex items-center gap-2"
                           >
-                            Projeto no ar
+                            {t("deploy-button")}
                             <SquareArrowOutUpRight
                               className="size-5"
                               color="#FFF"
@@ -157,7 +158,7 @@ const Projects = () => {
                   <div className="flex flex-col gap-4 p-3 sm:gap-6 sm:p-4">
                     <div className="flex flex-col gap-4">
                       <h3 className="text-xss font-bold text-white sm:text-2xl">
-                        OdontoPRO – Plataforma SaaS para clínicas de saúde
+                        {t("project-title")}
                       </h3>
 
                       <div
@@ -187,9 +188,7 @@ const Projects = () => {
 
                     <div className="flex flex-col gap-4 sm:gap-6">
                       <p className="leading-8 font-medium text-text-secondary line-clamp-3 sm:text-xss">
-                        Solução web desenvolvida para clínicas criarem seu
-                        perfil completo, com informações, fotos, serviços
-                        oferecidos, horários de funci...
+                        {t("project-description")}
                       </p>
 
                       <nav className="w-full flex items-center gap-3 msm:gap-6">
@@ -221,7 +220,7 @@ const Projects = () => {
                             href="#"
                             className="text-white font-bold flex items-center gap-2"
                           >
-                            Projeto no ar
+                            {t("deploy-button")}
                             <SquareArrowOutUpRight
                               className="size-5"
                               color="#FFF"
@@ -248,7 +247,7 @@ const Projects = () => {
                   <div className="flex flex-col gap-4 p-3 sm:gap-6 sm:p-4">
                     <div className="flex flex-col gap-4">
                       <h3 className="text-xss font-bold text-white sm:text-2xl">
-                        OdontoPRO – Plataforma SaaS para clínicas de saúde
+                        {t("project-title")}
                       </h3>
 
                       <div
@@ -278,9 +277,7 @@ const Projects = () => {
 
                     <div className="flex flex-col gap-4 sm:gap-6">
                       <p className="leading-8 font-medium text-text-secondary line-clamp-3 sm:text-xss">
-                        Solução web desenvolvida para clínicas criarem seu
-                        perfil completo, com informações, fotos, serviços
-                        oferecidos, horários de funci...
+                        {t("project-description")}
                       </p>
 
                       <nav className="w-full flex items-center gap-3 msm:gap-6">
@@ -312,7 +309,7 @@ const Projects = () => {
                             href="#"
                             className="text-white font-bold flex items-center gap-2"
                           >
-                            Projeto no ar
+                            {t("deploy-button")}
                             <SquareArrowOutUpRight
                               className="size-5"
                               color="#FFF"
@@ -331,7 +328,7 @@ const Projects = () => {
               size="seeMore"
               className="bg-transparent border border-[#999999] font-bold py-2 ssm:py-3"
             >
-              Ver mais
+              {t("seeMore-button")}
             </Button>
           </aside>
         </TabsContent>

@@ -11,8 +11,11 @@ import { CurriculumDownloadButtonEnum } from "@/@types/curriculumDownloadButtonE
 import { Button } from "./ui/button";
 import Image from "next/image";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 const Presentation = () => {
+  const t = useTranslations("Presentation");
+
   const [hoveredId, setHoveredId] = useState<string | null>(null);
 
   return (
@@ -46,18 +49,15 @@ const Presentation = () => {
             <div className="w-full flex flex-col items-start gap-2.5 sm:gap-12">
               <div className="w-full max-w-[96px] bg-gradient-to-r from-primary-blue to-secondary-blue h-[5px] sm:max-w-[148px] sm:h-2" />
               <h1 className="text-white text-2xl ssm:text-[26px] xsm:text-[28px] sm:text-[76px] font-bold">
-                Márcio Jorge,
+                {t("title1")}
                 <br />
-                Desenvolvedor Frontend
+                {t("title2")}
               </h1>
             </div>
           </aside>
           <aside className="py-6 flex flex-col w-full sm:p-0">
             <p className="text-text-secondary leading-8 font-medium sm:text-xss">
-              Desenvolvedor Frontend com foco em UI/UX, especialista em
-              desenvolver interfaces modernas, intuitivas e de grande impacto.
-              Uno criatividade e domínio técnico para transformar ideias em
-              experiências digitais que encantam e geram resultados.
+              {t("title-description")}
             </p>
           </aside>
         </div>
@@ -86,16 +86,14 @@ const Presentation = () => {
 
       <aside className="w-full flex gap-6 pt-6 sm:max-w-[400px] sm:flex-col sm:gap-5 sm:p-0 sm:px-6">
         <div className="hidden sm:flex flex-col gap-[18px]">
-          <h3 className="text-xss text-white font-bold">SOBRE MIM</h3>
+          <h3 className="text-xss text-white font-bold">{t("about-title")}</h3>
 
           <p className="text-xss leading-8 font-medium text-text-secondary">
-            Minha jornada no desenvolvimento é impulsionada pela busca constante
-            por soluções inovadoras e pela excelência na performance e
-            usabilidade. Com foco em{" "}
-            <span className="text-white font-bold">ReactJS</span>,{" "}
-            <span className="text-white font-bold">NextJS</span> e{" "}
-            <span className="text-white font-bold">Typescript</span>, transformo
-            ideias complexas em interfaces elegantes e responsivas.
+            {t.rich("about-description", {
+              react: (chunks) => <span className="text-white font-bold">{chunks}</span>,
+              next: (chunks) => <span className="text-white font-bold">{chunks}</span>,
+              ts: (chunks) => <span className="text-white font-bold">{chunks}</span>,
+            })}
           </p>
 
           <Link
@@ -107,7 +105,7 @@ const Presentation = () => {
             <span className="absolute left-0 bottom-0 w-full h-[2px] bg-white origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100" />
 
             <span className="relative z-10 flex items-center gap-3">
-              SAIBA MAIS
+              {t("about-link")}
               <ArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
             </span>
           </Link>
@@ -116,13 +114,10 @@ const Presentation = () => {
         <div className="hidden sm:block w-full h-[1px] bg-[#2D343F] rounded-full" />
 
         <div className="hidden sm:flex flex-col gap-[18px]">
-          <h3 className="text-xss text-white font-bold">MEUS PROJETOS</h3>
+          <h3 className="text-xss text-white font-bold">{t("projects-title")}</h3>
 
           <p className="text-xss leading-8 font-medium text-text-secondary">
-            Apresento alguns dos meus trabalhos mais relevantes, que demonstram
-            minha proficiência e dedicação em construir interfaces de usuário de
-            alta qualidade. Cada projeto reflete minha abordagem em resolver
-            problemas complexos com soluções criativas e eficientes.
+            {t("projects-description")}
           </p>
 
           <Link
@@ -134,7 +129,7 @@ const Presentation = () => {
             <span className="absolute left-0 bottom-0 w-full h-[2px] bg-white origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100" />
 
             <span className="relative z-10 flex items-center gap-3">
-              VER PROJETOS
+              {t("projects-link")}
               <ArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
             </span>
           </Link>
@@ -143,7 +138,7 @@ const Presentation = () => {
         <div className="hidden sm:block w-full h-[1px] bg-[#2D343F] rounded-full" />
 
         <div className="w-full flex flex-col gap-6 sm:justify-center sm:items-center sm:px-3 sm:py-10 sm:rounded-tr-[6px] sm:rounded-tl-[6px] sm:bg-light-background">
-          <h3 className="text-white text-xss font-bold">ENTRE EM CONTATO</h3>
+          <h3 className="text-white text-xss font-bold">{t("contactMe-section")}</h3>
 
           <div className="flex gap-5 items-center">
             {socialLinks.map((link) => (
@@ -154,11 +149,10 @@ const Presentation = () => {
                 rel="noopener noreferrer"
                 onMouseEnter={() => setHoveredId(link.id)}
                 onMouseLeave={() => setHoveredId(null)}
-                className={`transition-opacity duration-500 ${
-                  hoveredId && hoveredId !== link.id
-                    ? "opacity-30"
-                    : "opacity-100"
-                }`}
+                className={`transition-opacity duration-500 ${hoveredId && hoveredId !== link.id
+                  ? "opacity-30"
+                  : "opacity-100"
+                  }`}
               >
                 <link.icon className="w-6 h-6 text-white" />
               </Link>

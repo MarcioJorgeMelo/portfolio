@@ -44,8 +44,8 @@ export const stacks: StackProps[] = [
   },
   {
     icon: figmaIcon,
-    name: "Git",
-    alt: "Ícone do Git",
+    name: "Figma",
+    alt: "Ícone do Figma",
   },
   {
     icon: tailwindIcon,
@@ -55,12 +55,12 @@ export const stacks: StackProps[] = [
   {
     icon: sassIcon,
     name: "Sass",
-    alt: "Ícone do Git",
+    alt: "Ícone do Sass",
   },
   {
     icon: cssIcon,
     name: "CSS",
-    alt: "Ícone do Git",
+    alt: "Ícone do CSS",
   },
   {
     icon: javascriptIcon,
@@ -70,12 +70,12 @@ export const stacks: StackProps[] = [
   {
     icon: htmlIcon,
     name: "HTML",
-    alt: "Ícone do Git",
+    alt: "Ícone do HTML",
   },
   {
     icon: jestIcon,
     name: "Jest",
-    alt: "Ícone do Git",
+    alt: "Ícone do Jest",
   },
   {
     icon: nodeIcon,
@@ -85,22 +85,22 @@ export const stacks: StackProps[] = [
   {
     icon: expressIcon,
     name: "Express",
-    alt: "Ícone do Git",
+    alt: "Ícone do Express",
   },
   {
     icon: firebaseIcon,
     name: "Firebase",
-    alt: "Ícone do Git",
+    alt: "Ícone do Firebase",
   },
   {
     icon: mongoIcon,
     name: "MongoDB",
-    alt: "Ícone do Git",
+    alt: "Ícone do MongoDB",
   },
   {
     icon: postgresIcon,
     name: "PostgreSQL",
-    alt: "Ícone do Git",
+    alt: "Ícone do PostgreSQL",
   },
   {
     icon: gitIcon,
@@ -115,16 +115,16 @@ export const stacks: StackProps[] = [
   {
     icon: bitbucketIcon,
     name: "Bitbucket",
-    alt: "Ícone do Git",
+    alt: "Ícone do Bitbucket",
   },
   {
     icon: clickupIcon,
     name: "ClickUp",
-    alt: "Ícone do Git",
+    alt: "Ícone do ClickUp",
   },
   {
     icon: githubIcon,
     name: "Github",
-    alt: "Ícone do Git",
+    alt: "Ícone do Github",
   },
 ];

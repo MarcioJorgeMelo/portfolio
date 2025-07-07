@@ -5,10 +5,13 @@ import aboutImgMobile from "../../public/aboutImgMobile.png";
 import aboutImgWeb from "../../public/aboutImgWeb.png";
 import { stacks } from "@/shared/mocks/stacks";
 import { useWindowSize } from "@/shared/hooks/useWindowSize";
+import { useTranslations } from "next-intl";
 
 const About = () => {
   const { width } = useWindowSize();
   const isMobile = width < 640;
+
+  const t = useTranslations("About");
 
   const aboutImg = isMobile ? aboutImgMobile : aboutImgWeb;
 
@@ -21,7 +24,7 @@ const About = () => {
         <aside className="flex flex-col gap-4">
           <div className="w-full max-w-[96px] bg-white h-2 sm:max-w-[148px]" />
           <h1 className="text-white text-xgg font-bold sm:text-[52px]">
-            Sobre mim
+            {t("title")}
           </h1>
         </aside>
 
@@ -40,33 +43,38 @@ const About = () => {
 
             <div className="flex flex-col gap-4 sm:w-[741px] sm:h-[510px] sm:p-8 sm:justify-center">
               <p className="leading-[30px] tracking-wide text-text-secondary">
-                Olá, sou Márcio Jorge,{" "}
-                <span className="font-bold text-white">
-                  Desenvolvedor Frontend
-                </span>{" "}
-                com{" "}
-                <span className="font-bold text-white">
-                  1 ano de experiência
-                </span>
-                . Com forte{" "}
-                <span className="font-bold text-white">foco em UI/UX</span>,
-                combino design e tecnologia para construir projetos inovadores e
-                impactantes, ajudando empresas a se destacarem no mundo digital.
+                {t.rich("card-description1", {
+                  job: (chunks) => (
+                    <span className="text-white font-bold">{chunks}</span>
+                  ),
+                  experience: (chunks) => (
+                    <span className="text-white font-bold">{chunks}</span>
+                  ),
+                  design: (chunks) => (
+                    <span className="text-white font-bold">{chunks}</span>
+                  ),
+                })}
               </p>
               <p className="leading-[30px] tracking-wide text-text-secondary">
-                Sou especialista em desenvolvimento de interfaces fluidas,
-                intuitivas, acessíveis e responsivas para sites e aplicativos.
-                Tenho olhar atento aos detalhes e sou movido pela busca
-                constante por inovação, transformando ideias em experiências
-                digitais cativantes e funcionais.
+                {t.rich("card-description2", {
+                  strong: (chunks) => (
+                    <span className="text-white font-bold">{chunks}</span>
+                  ),
+                })}
               </p>
               <p className="leading-[30px] tracking-wide text-text-secondary">
-                Aliando criatividade e conhecimento técnico, entrego soluções
-                que não apenas encantam os usuários, mas também geram resultados
-                reais.
+                {t.rich("card-description3", {
+                  strong: (chunks) => (
+                    <span className="text-white font-bold">{chunks}</span>
+                  ),
+                })}
               </p>
               <p className="leading-[30px] tracking-wide text-text-secondary">
-                Vamos juntos construir algo extraordinário!
+                {t.rich("card-finish", {
+                  strong: (chunks) => (
+                    <span className="text-white font-bold">{chunks}</span>
+                  ),
+                })}
               </p>
             </div>
           </aside>
@@ -74,7 +82,7 @@ const About = () => {
           <aside className="w-full flex flex-col gap-10">
             <div className="flex flex-col gap-10 mx-auto">
               <h2 className="font-medium text-xss text-text-secondary sm:text-center sm:text-[20px]">
-                Conhecimento nas seguintes linguagens e ferramentas...
+                {t("text-divise")}
               </h2>
 
               <div className="grid grid-cols-4 gap-8 sm:w-full sm:max-w-[1080px] sm:flex sm:flex-wrap sm:justify-center">
