@@ -27,6 +27,14 @@
     "deploy-button": "Project deployed",
     "seeMore-button": "See more"
   },
+  "About": {
+    "title": "About me",
+    "card-description1": "Hello, I'm Márcio Jorge, <job>Frontend Developer</job> with <experience>1 year of experience</experience>. With a strong <design>focus on UI/UX</design>, I combine design and technology to build innovative and impactful projects, helping companies stand out in the digital world.",
+    "card-description2": "I specialize in developing fluid, intuitive, accessible and responsive interfaces for websites and applications. I have an eye for detail and am driven by the <strong>constant search for innovation</strong>, transforming ideas into captivating and functional digital experiences.",
+    "card-description3": "Combining <strong>creativity and technical knowledge</strong>, I deliver solutions that not only delight users, but also generate real results.",
+    "card-finish": "Let's build something <strong>extraordinary</strong> together!",
+    "text-divise": "Knowledge of the following languages ​and tools..."
+  },
   "Navigation": {
     "presentation": "Presentation",
     "experience": "Experience",

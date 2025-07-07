@@ -27,6 +27,14 @@
     "deploy-button": "Projeto no ar",
     "seeMore-button": "Ver mais"
   },
+  "About": {
+    "title": "Sobre mim",
+    "card-description1": "Olá, sou Márcio Jorge, <job>Desenvolvedor Frontend</job> com <experience>1 ano de experiência</experience>. Com forte <design>foco em UI/UX</design>, combino design e tecnologia para construir projetos inovadores e impactantes, ajudando empresas a se destacarem no mundo digital.",
+    "card-description2": "Sou especialista em desenvolvimento de interfaces fluidas, intuitivas, acessíveis e responsivas para sites e aplicativos. Tenho olhar atento aos detalhes e sou movido pela <strong>busca constante por inovação</strong>, transformando ideias em experiências digitais cativantes e funcionais.",
+    "card-description3": "Aliando <strong>criatividade e conhecimento técnico</strong>, entrego soluções que não apenas encantam os usuários, mas também geram resultados reais.",
+    "card-finish": "Vamos juntos construir algo <strong>extraordinário!</strong>",
+    "text-divise": "Conhecimento nas seguintes linguagens e ferramentas..."
+  },
   "Navigation": {
     "presentation": "Início",
     "experience": "Experiência",
