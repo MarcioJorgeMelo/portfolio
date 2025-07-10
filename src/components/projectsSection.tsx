@@ -1,17 +1,32 @@
+"use client"
+
 import CapaExImg from "../../public/capa-ex.png";
 import Image from "next/image";
-import { Card, CardContent } from "./ui/card";
+import { Card, CardContent, CardFooter } from "./ui/card";
 import { Badge } from "./ui/badge";
 import Link from "next/link";
-import { SquareArrowOutUpRight } from "lucide-react";
+import { SquareArrowOutUpRight, X } from "lucide-react";
 import { Button } from "./ui/button";
 import { FaGithub } from "react-icons/fa";
 import figmaIcon from "../../public/Figma.png";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerFooter,
+  DrawerTitle,
+} from "@/components/ui/drawer"
 import { useTranslations } from "next-intl";
+import { useState } from "react";
+import { projectCovers } from "@/shared/mocks/projectImages";
+import clsx from "clsx";
 
 const Projects = () => {
   const t = useTranslations("Projects");
+
+  const [drawerIsOpen, setDrawerIsOpen] = useState(false);
+  const [imageSelected, setImageSelected] = useState(projectCovers[0]);
 
   return (
     <section
@@ -56,91 +71,93 @@ const Projects = () => {
           <aside className="w-full flex flex-col gap-10 justify-center">
             <div className="w-full grid grid-cols-1 gap-10 sm:grid-cols-3 sm:gap-16">
               <Card className="w-full overflow-hidden p-0 bg-transparent border-[#3E3F40] rounded-[12px]">
-                <CardContent className="p-0">
-                  <div className="relative h-[220px] sm:h-[280px]">
-                    <Image
-                      src={CapaExImg}
-                      alt="Capa de um projeto"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
+                <CardContent className="p-0 hover:cursor-pointer">
+                  <main onClick={() => setDrawerIsOpen(!drawerIsOpen)}>
+                    <div className="relative h-[220px] sm:h-[280px] sm:hover:scale-105">
+                      <Image
+                        src={CapaExImg}
+                        alt="Capa de um projeto"
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
 
-                  <div className="flex flex-col gap-4 p-3 sm:gap-6 sm:p-4">
-                    <div className="flex flex-col gap-4">
-                      <h3 className="text-xss font-bold text-white sm:text-2xl">
-                        {t("project-title")}
-                      </h3>
+                    <div className="flex flex-col gap-4 p-3 sm:gap-6 sm:p-4">
+                      <div className="flex flex-col gap-4">
+                        <h3 className="text-xss font-bold text-white text-start sm:text-2xl">
+                          {t("project-title")}
+                        </h3>
 
-                      <div
-                        className="flex gap-2 items-center overflow-x-auto sm:gap-3"
-                        style={{
-                          scrollbarWidth: "none",
-                          msOverflowStyle: "none",
-                        }}
-                      >
-                        <Badge className="px-2 py-1.5 rounded-3xl bg-[#292F39] text-white font-bold text-sm sm:px-3 sm:py-2 sm:text-base">
-                          NextJS
-                        </Badge>
+                        <div
+                          className="flex gap-2 items-center overflow-x-auto sm:gap-3"
+                          style={{
+                            scrollbarWidth: "none",
+                            msOverflowStyle: "none",
+                          }}
+                        >
+                          <Badge className="px-2 py-1.5 rounded-3xl bg-[#292F39] text-white font-bold text-sm sm:px-3 sm:py-2 sm:text-base">
+                            NextJS
+                          </Badge>
 
-                        <Badge className="px-2 py-1.5 rounded-3xl bg-[#292F39] text-white font-bold text-sm sm:px-3 sm:py-2 sm:text-base">
-                          TailwindCSS
-                        </Badge>
+                          <Badge className="px-2 py-1.5 rounded-3xl bg-[#292F39] text-white font-bold text-sm sm:px-3 sm:py-2 sm:text-base">
+                            TailwindCSS
+                          </Badge>
 
-                        <Badge className="px-2 py-1.5 rounded-3xl bg-[#292F39] text-white font-bold text-sm sm:px-3 sm:py-2 sm:text-base">
-                          Stripe
-                        </Badge>
+                          <Badge className="px-2 py-1.5 rounded-3xl bg-[#292F39] text-white font-bold text-sm sm:px-3 sm:py-2 sm:text-base">
+                            Stripe
+                          </Badge>
 
-                        <Badge className="px-2 py-1.5 rounded-3xl bg-[#292F39] text-white font-bold text-sm sm:px-3 sm:py-2 sm:text-base">
-                          PostgreSQL
-                        </Badge>
+                          <Badge className="px-2 py-1.5 rounded-3xl bg-[#292F39] text-white font-bold text-sm sm:px-3 sm:py-2 sm:text-base">
+                            PostgreSQL
+                          </Badge>
+                        </div>
+
+                        <p className="leading-8 font-medium text-text-secondary text-start line-clamp-3 sm:text-xss">
+                          {t("project-description")}
+                        </p>
                       </div>
                     </div>
+                  </main>
 
-                    <div className="flex flex-col gap-4 sm:gap-6">
-                      <p className="leading-8 font-medium text-text-secondary line-clamp-3 sm:text-xss">
-                        {t("project-description")}
-                      </p>
+                  <CardFooter className="p-3 sm:p-4">
+                    <nav className="w-full flex items-center gap-3 msm:gap-6">
+                      <Link
+                        href="#github"
+                        className="flex items-center justify-center px-4 py-3 rounded-[8px] border-1 border-[#3E3F40] hover:bg-light-boxes hover:scale-105 transition-all duration-300"
+                      >
+                        <FaGithub className="w-5 h-5" color="#FFF" />
+                      </Link>
 
-                      <nav className="w-full flex items-center gap-3 msm:gap-6">
+                      <Link
+                        href="#figma"
+                        className="flex items-center justify-center px-4 py-3 rounded-[8px] border-1 border-[#3E3F40] hover:bg-light-boxes hover:scale-105 transition-all duration-300"
+                      >
+                        <Image
+                          src={figmaIcon}
+                          alt="Ícone de acesso ao protótipo no Figma"
+                          className="w-5 h-5"
+                        />
+                      </Link>
+
+                      <Button
+                        asChild
+                        variant="seeMore"
+                        size="seeMore"
+                        className="flex-1"
+                      >
                         <Link
-                          href="#"
-                          className="flex items-center justify-center px-4 py-3 rounded-[8px] border-1 border-[#3E3F40] hover:bg-light-boxes hover:scale-105 transition-all duration-300"
+                          href="#deploy"
+                          className="text-white font-bold flex items-center gap-2"
                         >
-                          <FaGithub className="w-5 h-5" color="#FFF" />
-                        </Link>
-
-                        <Link
-                          href="#"
-                          className="flex items-center justify-center px-4 py-3 rounded-[8px] border-1 border-[#3E3F40] hover:bg-light-boxes hover:scale-105 transition-all duration-300"
-                        >
-                          <Image
-                            src={figmaIcon}
-                            alt="Ícone de acesso ao protótipo no Figma"
-                            className="w-5 h-5"
+                          {t("deploy-button")}
+                          <SquareArrowOutUpRight
+                            className="size-5"
+                            color="#FFF"
                           />
                         </Link>
-
-                        <Button
-                          asChild
-                          variant="seeMore"
-                          size="seeMore"
-                          className="flex-1"
-                        >
-                          <Link
-                            href="#"
-                            className="text-white font-bold flex items-center gap-2"
-                          >
-                            {t("deploy-button")}
-                            <SquareArrowOutUpRight
-                              className="size-5"
-                              color="#FFF"
-                            />
-                          </Link>
-                        </Button>
-                      </nav>
-                    </div>
-                  </div>
+                      </Button>
+                    </nav>
+                  </CardFooter>
                 </CardContent>
               </Card>
 
@@ -336,6 +353,134 @@ const Projects = () => {
         <TabsContent value="design">Design</TabsContent>
         <TabsContent value="desktop">Desktop</TabsContent>
       </Tabs>
+
+      <Drawer open={drawerIsOpen}>
+        <DrawerContent className="bg-dark-background border-0 ring-0 p-0">
+          <DrawerTitle className="sr-only">Título do Drawer</DrawerTitle>
+
+          <div className="w-full flex flex-col items-end gap-3 p-3 overflow-y-auto">
+            <DrawerClose asChild>
+              <Button variant="close" size="close" onClick={() => setDrawerIsOpen(false)}><X className="size-3 text-white" /></Button>
+            </DrawerClose>
+
+            <div className="w-full flex flex-col gap-4 overflow-y-auto">
+              <div className="w-full flex flex-col gap-4">
+                <div className="relative w-full h-[270px] rounded-[8px]">
+                  <Image
+                    src={imageSelected.src}
+                    alt={imageSelected.alt}
+                    fill
+                    className="object-cover rounded-[8px]"
+                  />
+                </div>
+
+                <div className="flex items-center gap-4 overflow-x-auto flex-nowrap">
+                  {projectCovers.map(item => (
+                    <div
+                      key={item.id}
+                      className="relative w-[112px] h-[56px] rounded-[8px] shrink-0"
+                      onClick={() => setImageSelected(item)}
+                    >
+                      <Image
+                        src={item.src}
+                        alt={item.alt}
+                        fill
+                        className={clsx(
+                          "object-cover rounded-[8px]",
+                          item.id !== imageSelected.id && "opacity-40"
+                        )}
+                      />
+                    </div>
+                  ))}
+                </div>
+
+                <h1 className="text-2xl font-bold text-white">OdontoPRO – Plataforma SaaS para clínicas de saúde</h1>
+
+                <div className="w-full flex flex-col gap-4">
+                  <div
+                    className="flex gap-2 items-center overflow-x-auto sm:gap-3"
+                    style={{
+                      scrollbarWidth: "none",
+                      msOverflowStyle: "none",
+                    }}
+                  >
+                    <Badge className="px-2 py-1.5 rounded-3xl bg-[#292F39] text-white font-bold text-sm sm:px-3 sm:py-2 sm:text-base">
+                      NextJS
+                    </Badge>
+
+                    <Badge className="px-2 py-1.5 rounded-3xl bg-[#292F39] text-white font-bold text-sm sm:px-3 sm:py-2 sm:text-base">
+                      TailwindCSS
+                    </Badge>
+
+                    <Badge className="px-2 py-1.5 rounded-3xl bg-[#292F39] text-white font-bold text-sm sm:px-3 sm:py-2 sm:text-base">
+                      Stripe
+                    </Badge>
+
+                    <Badge className="px-2 py-1.5 rounded-3xl bg-[#292F39] text-white font-bold text-sm sm:px-3 sm:py-2 sm:text-base">
+                      PostgreSQL
+                    </Badge>
+                  </div>
+
+                  <p className="leading-8 font-medium text-text-secondary text-start line-clamp-3 sm:text-xss">
+                    {t("project-description")}
+                  </p>
+
+                  <p className="leading-8 font-medium text-text-secondary sm:text-xss mb-4">
+                    Desafios técnicos:<br />
+                    -asdasdasd<br />
+                    -sadasdas<br />
+                    -adasdasd<br />
+                    -adasdadadas<br />
+                    -asdasdasd<br />
+                    -sadasdas<br />
+                    -adasdasd<br />
+                    -adasdadadas
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <DrawerFooter className="p-0 px-4 py-3">
+            <nav className="w-full flex items-center gap-3 msm:gap-6">
+              <Link
+                href="#github"
+                className="flex items-center justify-center px-4 py-3 rounded-[8px] border-1 border-[#3E3F40] hover:bg-light-boxes hover:scale-105 transition-all duration-300"
+              >
+                <FaGithub className="w-5 h-5" color="#FFF" />
+              </Link>
+
+              <Link
+                href="#figma"
+                className="flex items-center justify-center px-4 py-3 rounded-[8px] border-1 border-[#3E3F40] hover:bg-light-boxes hover:scale-105 transition-all duration-300"
+              >
+                <Image
+                  src={figmaIcon}
+                  alt="Ícone de acesso ao protótipo no Figma"
+                  className="w-5 h-5"
+                />
+              </Link>
+
+              <Button
+                asChild
+                variant="seeMore"
+                size="seeMore"
+                className="flex-1"
+              >
+                <Link
+                  href="#deploy"
+                  className="text-white font-bold flex items-center gap-2"
+                >
+                  {t("deploy-button")}
+                  <SquareArrowOutUpRight
+                    className="size-5"
+                    color="#FFF"
+                  />
+                </Link>
+              </Button>
+            </nav>
+          </DrawerFooter>
+        </DrawerContent>
+      </Drawer>
     </section>
   );
 };
