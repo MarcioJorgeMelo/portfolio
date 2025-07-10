@@ -5,4 +5,6 @@ export const projectCovers = [
     { id: 2, src: CapaExImg, alt: "Capa do projeto 2" },
     { id: 3, src: CapaExImg, alt: "Capa do projeto 3" },
     { id: 4, src: CapaExImg, alt: "Capa do projeto 4" },
+    { id: 5, src: CapaExImg, alt: "Capa do projeto 5" },
+    { id: 6, src: CapaExImg, alt: "Capa do projeto 6" },
 ];
