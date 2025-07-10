@@ -20,9 +20,10 @@ import {
 import {
   Dialog,
   DialogContent,
+  DialogTitle,
 } from "@/components/ui/dialog"
 import { useTranslations } from "next-intl";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { projectCovers } from "@/shared/mocks/projectImages";
 import clsx from "clsx";
 import { useWindowSize } from "@/shared/hooks/useWindowSize";
@@ -30,7 +31,7 @@ import { useAllProjects } from "@/shared/mocks/projects";
 
 const Projects = () => {
   const { width } = useWindowSize();
-  const isWeb = width > 640;
+  const [isClient, setIsClient] = useState(false);
 
   const t = useTranslations("Projects");
 
@@ -42,14 +43,18 @@ const Projects = () => {
   const [visibleCount, setVisibleCount] = useState(3);
   const visibleProjects = projects.slice(0, visibleCount);
 
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   function projectDetailOpen() {
-    if (isWeb) {
-      setDialogIsOpen(true);
-      return;
-    }
+    if (!isClient) return;
 
-    setDrawerIsOpen(true);
+    if (width > 640) {
+      setDialogIsOpen(true);
+    } else {
+      setDrawerIsOpen(true);
+    }
   }
 
   return (
@@ -337,6 +342,8 @@ const Projects = () => {
 
       <Dialog open={dialogIsOpen} onOpenChange={setDialogIsOpen}>
         <DialogContent className="flex justify-center gap-6 bg-dark-background border-0 ring-0 p-6 rounded-[12px]">
+          <DialogTitle className="sr-only">Título do Dialog</DialogTitle>
+
           <div className="w-[564px] flex flex-col gap-6">
             <div className="relative w-full h-[280px] rounded-[8px]">
               <Image
