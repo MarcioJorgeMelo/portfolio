@@ -89,7 +89,7 @@ const About = () => {
                 {stacks.map((item, index) => (
                   <div
                     key={index}
-                    className="relative group p-2 rounded-[12px] bg-light-boxes flex items-center justify-center ring-2 ring-[#FFF]/20 hover:ring-[#FFF]/40 transition-all duration-300"
+                    className="relative group p-2 rounded-[12px] bg-light-boxes flex items-center justify-center ring-2 ring-[#FFF]/20 hover:ring-[#FFF]/60 transition-all duration-300"
                   >
                     <Image
                       src={item.icon}
