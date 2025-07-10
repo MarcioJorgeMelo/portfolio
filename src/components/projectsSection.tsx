@@ -19,11 +19,14 @@ import {
 } from "@/components/ui/drawer"
 import { useTranslations } from "next-intl";
 import { useState } from "react";
+import { projectCovers } from "@/shared/mocks/projectImages";
+import clsx from "clsx";
 
 const Projects = () => {
   const t = useTranslations("Projects");
 
   const [drawerIsOpen, setDrawerIsOpen] = useState(false);
+  const [imageSelected, setImageSelected] = useState(projectCovers[0]);
 
   return (
     <section
@@ -364,49 +367,31 @@ const Projects = () => {
               <div className="w-full flex flex-col gap-4">
                 <div className="relative w-full h-[270px] rounded-[8px]">
                   <Image
-                    src={CapaExImg}
-                    alt="Capa de um projeto"
+                    src={imageSelected.src}
+                    alt={imageSelected.alt}
                     fill
                     className="object-cover rounded-[8px]"
                   />
                 </div>
 
                 <div className="flex items-center gap-4 overflow-x-auto flex-nowrap">
-                  <div className="relative w-[112px] h-[56px] rounded-[8px] shrink-0">
-                    <Image
-                      src={CapaExImg}
-                      alt="Capa de um projeto"
-                      fill
-                      className="object-cover rounded-[8px]"
-                    />
-                  </div>
-
-                  <div className="relative w-[112px] h-[56px] rounded-[8px] shrink-0">
-                    <Image
-                      src={CapaExImg}
-                      alt="Capa de um projeto"
-                      fill
-                      className="object-cover opacity-40 rounded-[8px]"
-                    />
-                  </div>
-
-                  <div className="relative w-[112px] h-[56px] rounded-[8px] shrink-0">
-                    <Image
-                      src={CapaExImg}
-                      alt="Capa de um projeto"
-                      fill
-                      className="object-cover opacity-40 rounded-[8px]"
-                    />
-                  </div>
-
-                  <div className="relative w-[112px] h-[56px] rounded-[8px] shrink-0">
-                    <Image
-                      src={CapaExImg}
-                      alt="Capa de um projeto"
-                      fill
-                      className="object-cover opacity-40 rounded-[8px]"
-                    />
-                  </div>
+                  {projectCovers.map(item => (
+                    <div
+                      key={item.id}
+                      className="relative w-[112px] h-[56px] rounded-[8px] shrink-0"
+                      onClick={() => setImageSelected(item)}
+                    >
+                      <Image
+                        src={item.src}
+                        alt={item.alt}
+                        fill
+                        className={clsx(
+                          "object-cover rounded-[8px]",
+                          item.id !== imageSelected.id && "opacity-40"
+                        )}
+                      />
+                    </div>
+                  ))}
                 </div>
 
                 <h1 className="text-2xl font-bold text-white">OdontoPRO – Plataforma SaaS para clínicas de saúde</h1>
